@@ -1,0 +1,33 @@
+# jemdoc: menu{MENU}{index.html}, nofooter  
+==Xiao Luo
+
+~~~
+{}{img_left}{photos/Me.jpg}{alt text}{181}{160}
+PhD Candidate,\n [https://www.math.pku.edu.cn School of Mathematical Sciences], \n[https://www.pku.edu.cn Peking University (PKU)],\n
+Beijing 100871, China  \n \n 
+E-mail: /xiaoluo/ (at) pku.edu.cn
+~~~
+
+== About me
+I received the B.S. degrees in Mathematics from Nanjing University ([http://www.nju.edu.cn NJU]) in 2017. I am now a fourth year Ph.D. candidate (Sept 2017 - ) in School of Mathematical Sciences, Peking University, Beijing, China. My supervisor is Prof. [https://www.math.pku.edu.cn/jsdw/js_20180628175159671361/d_20180628175159671361/69896.htm Minghua Deng]. I'm also a research intern (Nov 2019 - ) in DAMO Academy, Alibaba Group, supervised by Dr. [https://scholar.google.com.hk/citations?user=DyeODPUAAAAJ&hl=zh-CN&oi=ao Chong Chen]. 
+
+
+== Research
+My research interests include 
+- Deep Learning 
+- Bioinformatics
+- Image Retrieval
+- Recommender System
+
+== Honors and Awards
+
+- 2020. *China National Scholarship*
+- 2019,2020. *President Scholarship, Peking University*
+- 2017. *China National Scholarship*
+- 2017. *Outstanding Graduates, Nanjing University*
+
+=== Recent Publications 
+. *Xiao Luo, Xinming Tu*, Yang Ding, Ge Gao and Minghua Deng, \"Expectation pooling: an effective and interpretable pooling method for predicting DNA–protein binding\",  Bioinformatics, Volume 36, Issue 5, March 2020, Pages 1405–1412
+. *Xiao Luo, Weilai Chi* and Minghua Deng, \" Deepprune: Learning Efficient and Interpretable Convolutional Networks Through Weight Pruning for Predicting DNA-Protein Binding\", Front. Genet., 2019.
+. *Xiao Luo, Zeyu Ma, Daqing Wu*, Chong Chen, Jinwen Ma and Minghua Deng, \"Deep Unsupervised Hashing by Distilled Smooth Guidance\", In IEEE International Conference on Multimedia and Expo (ICME), 2021. 
+. *Xiao Luo, Daqing Wu*, Chong Chen, Jinwen Ma and Minghua Deng, \"Deep Unsupervised Hashing by Global and Local Consistency\", In IEEE International Conference on Multimedia and Expo (ICME), 2021. 
