@@ -1,3 +1,3 @@
-This is my personal website: https://leoyuan.site
+This is my personal website
 
-Style referenced from http://hexianghu.com/.
+Style referenced from http://hexianghu.com/, https://leoyuan.site/
