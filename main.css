@@ -46,7 +46,7 @@ body {
 
 body:after {
     display: none;
-    content: url("images/background/bg1.jpeg") url("images/background/background-2.jpg")
+    content: url("images/background/bg_1.jpeg") url("images/background/background-2.jpg")
 }
 
 h1,
@@ -678,7 +678,7 @@ pre>code {
 }
 
 .shallow-bg {
-    background-image: url("images/background/background.jpg");
+    background-image: url("images/background/bg_1.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center
