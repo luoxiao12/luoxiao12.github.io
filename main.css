@@ -956,7 +956,7 @@ hr.soft {
     width: 3.6rem
 }
 
-.icon-button span {
+/* .icon-button span {
     border-radius: 0;
     display: block;
     height: 0;
@@ -992,7 +992,7 @@ hr.soft {
 
 .github span {
     background-color: #000
-}
+} */
 
 .icon-button i {
     background: none;
