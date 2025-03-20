@@ -130,30 +130,25 @@
 <div id="my-email" class="text-grey-light">
   <a href="mailto:xiaoluo@cs.ucla.edu">xiao [at] cs.ucla.edu</a>
 </div> -->      
+<style>
+.icon-button {
+  text-decoration: none !important;
+  display: inline-block !important;
+  color: black !important; /* 保持默认颜色 */
+  transition: none !important; /* 取消所有动画 */
+}
 
-  <style>
-    .icon-button {
-      text-decoration: none;
-      display: inline-block;
-      padding: 10px;
-      font-size: 20px;
-      color: black; /* 保持默认颜色 */
-      transition: none; /* 取消所有动画 */
-    }
-
-    .icon-button:hover,
-    .icon-button:focus,
-    .icon-button:active {
-      color: black; /* 取消 hover 变色 */
-      transform: none; /* 取消 hover 变化 */
-      background: none; /* 确保背景不变 */
-    }
-
-    .icon-button i {
-      transition: none; /* 取消图标动画 */
-    }
-  </style>
-	      
+.icon-button:hover,
+.icon-button:focus,
+.icon-button:active {
+  color: black !important; /* 取消 hover 和点击时的变色 */
+  transform: none !important; /* 取消 hover 和点击时的缩放 */
+  background: none !important; /* 确保背景不变 */
+  outline: none !important; /* 取消点击后的边框 */
+  box-shadow: none !important; /* 取消任何阴影效果 */
+}
+</style>
+  
 <style>
   #my-email {
 	  margin-top: -10px
