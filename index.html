@@ -15,8 +15,8 @@
     <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" 
-          integrity="sha512-Wws13SgJt+muD88TxUonJcGndYw03+Is8+TqdruJHZg57Sm00JpYdQdCMU0kzDYu7vZ4V6caZISJ8TkuyRkxEw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
 
@@ -29,6 +29,7 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        font-size: 18px;
       }
       .wrapper {
         max-width: 1000px;
@@ -79,14 +80,14 @@
         text-align: left;
       }
       .name-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: bold;
         margin: 0 0 10px 0;
         color: #333;
         font-family: 'Times New Roman', serif;
       }
       .position-title {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 600;
         margin: 0 0 15px 0;
         color: #333;
@@ -97,7 +98,7 @@
       .dept-link, .univ-link {
         color: #0066cc;
         text-decoration: underline;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         line-height: 1.4;
       }
       .dept-link:hover, .univ-link:hover {
@@ -107,7 +108,7 @@
         margin-bottom: 20px;
       }
       .contact-item {
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: #555;
         margin-bottom: 8px;
         font-family: Arial, sans-serif;
@@ -204,7 +205,7 @@
         background-color: #fafafa;
       }
       .pub-left {
-        width: 300px;
+        width: 50%;
         flex-shrink: 0;
       }
       .intro-img {
@@ -252,7 +253,6 @@
       .site-nav {
         margin: 15px 0;
         padding: 10px 0;
-        border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
         position: relative;
         width: 100vw;
@@ -341,25 +341,25 @@
               </div>
               <div class="contact-item">
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:xiao.luo@wisc.edu" style="color: #555; text-decoration: none;">email me</a>
+                <span>xiao.luo@wisc.edu</span>
               </div>
             </div>
 
             <div class="social-media">
               <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button" target="_blank">
-                <i class="ai ai-google-scholar"></i>
+                <i class="ai ai-google-scholar-square icon-github"></i>
               </a>
 
-              <a href="https://github.com/luoxiao12" class="icon-button" target="_blank">
-                <i class="fab fa-github"></i>
+              <a href="https://github.com/luoxiao12" class="icon-button github" target="_blank">
+                <i class="fa fa-github icon-github"></i>
               </a>
 
-              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button" target="_blank">
-                <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin" target="_blank">
+                <i class="fa fa-linkedin icon-linkedin"></i>
               </a>
               
-              <a href="https://twitter.com/XiaoLuo_12" class="icon-button" target="_blank">
-                <i class="fab fa-twitter"></i>
+              <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter" target="_blank">
+                <i class="fa fa-twitter icon-twitter"></i>
               </a>
             </div>
           </div>
@@ -386,7 +386,7 @@
         </p>
 
         <p>
-          If you are interested in my research or would like to work with me, please feel free to email me (<a href="mailto:xiao.luo@wisc.edu">xiao.luo@wisc.edu</a>)!
+          If you are interested in my research or would like to work with me, please feel free to <a href="mailto:xiao.luo@wisc.edu" style="color: #0066cc; text-decoration: underline;">email me</a>!
         </p>
 
         <h2 id="news">News</h2>
@@ -487,7 +487,6 @@
             <div class="pub-title">Embracing Large Language Models in Traffic Flow Forecasting</div>
             <div class="pub-authors">Yusheng Zhao, <b>Xiao Luo</b>, Haomin Wen, Zhiping Xiao, Wei Ju, Ming Zhang</div>
             <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025</div>
-            <div class="pub-award">TOP AI Conference</div>
           </div>
         </div>
         <div class="pub">
