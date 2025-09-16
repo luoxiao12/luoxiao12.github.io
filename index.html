@@ -1,477 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
+    <title>Xiao Luo </title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFR2GFKT75"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-RFR2GFKT75');
-  </script> -->
-  <!-- Google Tag Manager -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  })(window,document,'script','dataLayer','GTM-NC38VTD');</script> -->
-  <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Academic personal homepage of Xiao Luo, Assistant Professor at UW–Madison.">
+    <meta name="keywords" content="statistics, machine learning, deep learning, data mining, AI for science">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
-	<!-- <meta name="google-site-verification" content="u_--0s_Uw50r4zCgRrzltkmFhNCduYOJwPGlKVTuNJU" /> -->
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon-dark.png" type="image/png" />
+    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
+    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
-  <title>Xiao Luo </title>
-  <meta name="description" lang="en" content="This is an academic website for Xiao Luo">
-  <meta name="keywords" lang="en" content="Xiao Luo." />
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" 
+          integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" 
+          integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
 
-  <link rel="shortcut icon" href="images/icon/L.png">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/publications.css">
 
-  <link rel="stylesheet" href="css/academicons.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-
-
-  <script src="js/jquery-2.1.3.min.js"> </script>
-
-  <!--[if lt IE 9]>
-<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-</script>
-<![endif]-->
-
-  <script type="text/javascript">
-    function ShowHide(divId, linkDivId) {
-        if(document.getElementById(divId).style.display == 'none') {
-            document.getElementById(divId).style.display='block';
-            document.getElementById(linkDivId).style.display='none'; // Hide the "read more" link
-        }
-        else {
-            document.getElementById(divId).style.display = 'none';
-        }
-    }
-  </script>
-
-  <style>
-    /* 为所有列表项设置样式 */
-    li.indented {
+    <style>
+      /* 页面整体宽度 */
+      .wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      section {
+        line-height: 1.6;
+      }
+      /* 头像 + 简介并排 */
+      .about-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+      .about-text {
+        flex: 1;
+      }
+      .about-text h1 {
+        margin-top: 0;
+      }
+      .about-text position {
+        font-size: 1.1rem;
+        display: block;
+        margin-top: 5px;
+      }
+      .social-icons {
+        margin-top: 10px;
+      }
+      .image.avatar img {
+        border-radius: 50%;
+        max-width: 180px;
+      }
+      /* 导航菜单样式 */
+      .site-nav {
+        margin: 30px 0;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
         position: relative;
-        padding-left: 90px; /* 这是对齐效果的关键，可以根据实际内容调整这个值 */
-    }
-
-    li.indented::before {
-        content: attr(data-date);
-        position: absolute;
-        left: 0;
-        top: 0;
-        white-space: nowrap;
-    }
-  </style>
-  
-</head>
-
-
-<body>
-    <header class="site-header">
-
-  <div class="wrapper">
-<nav class="site-nav">
-  <a href="#" class="menu-icon">
-    <svg viewBox="0 0 18 15">
-      <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-      <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-      <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-    </svg>
-  </a>
-
-  <div class="trigger">
-    <a class="page-link" href="#bio"><b>Biography</b></a>
-   <a class="page-link" href="#news"><b>News</b></a>
-    <a class="page-link" href="#publications"><b>Publications</b></a>
-<a class="page-link" href="#tutorial"><b>Tutorial </b></a>
-    <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
-<!--     <a class="page-link" href="#timeline"><b>Experiences</b></a> -->
-    <a class="page-link" href="#teaching"><b>Teaching </b></a>
-    <a class="page-link" href="#academicservices"><b>Academic Services </b></a>
-	
-<!--     <a class="page-link" href="#misc"><b>Misc</b></a> -->
-    <!-- Button for Posts -->
-  </div>
-</nav>
-  </div>
-</header>
-
-  <div id="profile-cover" class="cover shallow-bg img-responsive"> 
-    <div id="profile-namecard" class="profile-wrapper wrapper-light">
-      <div id="my-pic" class="profile-col profile-col-1">
-        <img id="profile-avatar" src="image/me2.jpg" alt="Me" class="circle-img border-dark"-/>
-      </div>
-      <div id="my-contact" class="profile-col profile-col-2">
-        <div id="my-name" class="text-grey-dark">
-          Xiao Luo<br>
-        </div>
-        <div id="my-title" class="text-grey">
-          <p style="font-size: 19px;"></p>
-        </div>
-<!-- <style>
-  #my-email {
-    margin-bottom: 10px; 
-  }
-</style>
-
-<div id="my-email" class="text-grey-light">
-  <a href="mailto:xiao.luo@wisc.edu">xiao.luo [at] wisc.edu</a>
-</div> -->      
-<style>
-.icon-button {
-  text-decoration: none !important;
-  display: inline-block !important;
-  color: black !important; /* 保持默认颜色 */
-  transition: none !important; /* 取消所有动画 */
-}
-
-.icon-button:hover,
-.icon-button:focus,
-.icon-button:active {
-  color: black !important; /* 取消 hover 和点击时的变色 */
-  transform: none !important; /* 取消 hover 和点击时的缩放 */
-  background: none !important; /* 确保背景不变 */
-  outline: none !important; /* 取消点击后的边框 */
-  box-shadow: none !important; /* 取消任何阴影效果 */
-}
-</style>
-  
-<style>
-  #my-email {
-	  margin-top: -10px
-  }
-</style>
-
-<div id="my-email" class="text-grey-light">
-</div>    
-<style>
-  #social-media {
-	  margin-top: 3px
-  }
-</style>
-        <div class="social-media">
-          <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button github">
-          <i class="ai ai-google-scholar-square icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://github.com/luoxiao12" class="icon-button github">
-            <i class="fa fa-github icon-github"></i>
-            <span></span>
-          </a>
-
-          <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin">
-            <i class="fa fa-linkedin icon-linkedin"></i>
-            <span></span>
-          </a>
-          
-          <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter">
-            <i class="fa fa-twitter icon-twitter"></i>
-            <span></span>
-          </a>
-         
-          <!--<a href="files/CV.pdf" class="icon-button github">-->
-            <!--<i class="ai ai-cv icon-github"></i>-->
-            <!--<span></span>-->
-          <!--</a>-->
-        </div>
-      </div>
-
-      <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
-        <div id="my-desc-title">
-          Another me.
-        </div>
-        <div id="my-desc-content">
-          I enjoy running, traveling, hiking, movies, music and so much more<br>
-        </div>
-      </div> -->
-    </div>
-  </div>
-  <!-- <script type="text/javascript">
-    function deepFeature()
-    {
-      $('#profile-avatar').attr('src', 'images/self-portrait/deep-me.jpg');
-      $('#profile-avatar').removeClass('border-dark');
-      $('#profile-avatar').addClass('border-bright');
-
-      $('#profile-cover').removeClass('shallow-bg');
-      $('#profile-cover').addClass('deep-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-light');
-      $('#profile-namecard').addClass('wrapper-dark');
-      
-      $('#my-desc').removeClass('hide');
-      $('#my-contact').addClass('hide');    
-      // console.log('Move in now...');
-    }
-
-    function shallowFeature()
-    {
-      $('#profile-avatar').attr('src', 'image/me2.jpg');
-      $('#profile-avatar').removeClass('border-bright');
-      $('#profile-avatar').addClass('border-dark');
-
-      $('#profile-cover').removeClass('deep-bg');
-      $('#profile-cover').addClass('shallow-bg');
-      
-      $('#profile-namecard').removeClass('wrapper-dark');
-      $('#profile-namecard').addClass('wrapper-light');
-      
-      $('#my-contact').removeClass('hide');
-      $('#my-desc').addClass('hide');
-      // console.log('Move out now...');
-    }
-
-    $(function() { 
-      $('#my-pic').hover(deepFeature, shallowFeature);
-    })
-
-  </script> -->
-
-<div class="page-content">
-<div class="wrapper">
-<div id="bio" class="bio">
-
-  <h1 class="md-heading text-left">
-    <i class="fa fa-star" aria-hidden="true"></i>
-    About
-  </h1>
-  <div class="bio-body" style="overflow:hidden;">
-    <p>I'm an Assistant Professor at the Department of Statistics, University of Wisconsin–Madison. Previously, I was a postdoctoral researcher in the Department of Computer Science, UCLA, under the supervision of Prof. <a href="http://web.cs.ucla.edu/~yzsun/">Yizhou Sun</a> and Prof. <a href="https://web.cs.ucla.edu/~weiwang/">Wei Wang</a>. I completed my Ph.D. at <a href="https://english.pku.edu.cn/">Peking University (PKU)</a> under the supervision of Prof. <a href="https://www.oir.pku.edu.cn/cqben/info/1002/1770.htm">Minghua Deng</a>. I also work closely with Prof. <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a> and Prof. <a href="https://medicine.yale.edu/profile/xiting-yan/">Xiting Yan</a> at Yale University. </p> 
-	  
-<!-- 	  <p>I have been collaborating with Prof. <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a> (Yale, Biostatistics), Prof. <a href="https://medicine.yale.edu/profile/xiting-yan/">Xiting Yan</a> (Yale, Medicine), Prof. <a href="https://scholar.google.com/citations?user=LbzoQBsAAAAJ">Ming Zhang</a> (PKU, CS) and Dr. <a href="https://scholar.google.com/citations?user=6G-l4o0AAAAJ">Xian-Sheng Hua</a> (IEEE Fellow). </p>
-  
-<p>I have authored <b>over 60</b> publications in prestigious venues including NeurIPS, ICML, ICLR, ICCV, CVPR, TheWebConf, TMLR, AAAI, IJCAI, ICDE, ICDM, TPAMI (IF=23.6), Information Fusion (IF=18.6), TIP (IF=10.6), TNNLS (IF=10.4), TKDE (IF=8.9), TMM (IF=7.3), TKDD (IF=3.6), TOMM (IF=5.1) and Bioinformatics (IF=5.8).</p>
-    
-<p>I'm on the <b>Editorial Board</b> of BMC Bioinformatics, served as an <b>Area Chair</b> for ACM MM 2024 and have been a PC Member/Reviewer for <b> most</b> prestigious machine learning conferences and three high impact journals (IF>10).</p> 
- -->
-<!--   <p>I'm NOT on the job market! </span></p> -->
-<!--     <div style="float:left">
-	    <h3>
-		    <i class="fa fa-star" aria-hidden="true"></i>
-		    <strong>Research Interests</strong>
-			</h3>
-<p>My research focuses on the <b>intersection</b> of <b>Machine Learning</b>, <b>Foundation Models</b>, <b>Statistical Modeling</b> and <b>Scientific Problems</b> (<b>AI/ML for Science</b> including Biology, Genomics, Health, Mechanics and Information Science). Generally, I work on building computational models for <b>interdisciplinary</b> scientific applications. The ultimate goal of my research is to allow every researcher in any scientific field to benefit from machine learning and data mining. I have a special focus on learning over dynamical systems, data-efficient graph machine learning, large language models and health/biology-related real-world applications. 
-    </div> -->
-  
-  </div>
-</div>
-
-<!-- <div id="news" class="bio">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-star" aria-hidden="true"></i>
-    News
-  </h1>  
-  <ul>    
-<li> Invited to serve as the Area Chair for NeurIPS 2025!  </li>
-<li> Invited to serve as the Area Chair for ACL ARR May (EMNLP 2025)!  </li>
-	  
-<li> Invited to serve as the Senior Program Committee Member for CIKM 2025!  </li>
-<li> Invited to serve as the Area Chair for ECMLPKDD 2025!  </li>	  
-<li> Invited to serve as the Area Chair for ACM MM 2025!  </li>	  
-<li> Invited to serve as the Area Chair for ACL ARR Feb (ACL 2025)!  </li>	  
-<li> Invited to serve as the Area Chair for ICML 2025!  </li>
-<li> Invited to serve as the Senior Program Committee Member for IJCAI 2025!  </li>
-	  
-<li> Invited to serve as the Area Chair for ACM MM 2024!  </li>
-    <li> Our paper ''<a href="https://openreview.net/pdf?id=8AYetbupoZ">TANGO: Time-reversal Latent GraphODE for Multi-Agent Dynamical Systems</a>'' won the best paper award at NeurIPS 2023 Workshop DLDE! </b></a> </li>
-    <li> I am honored to join the Editorial Board of BMC Bioinformatics! </li>
-    <li> Our paper ''<a href="https://arxiv.org/pdf/2210.03969.pdf">Kernel-based Substructure Exploration for Next POI Recommendation</a>'' went into the finalist of the best paper award at ICDM 2022! </li> 
-</div>  -->
-
-<!-- <div id="publications" class="publications">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-star" aria-hidden="true"></i>
-    Selected Publications
-  </h1>
-  <div class="pub-list">
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/PGODE.jpg"></div><div class="pub-right"><p><b>Xiao Luo</b>, Yiyang Gu, Huiyu Jiang, Hang Zhou, Jinsheng Huang, Wei Ju, Zhiping Xiao, Ming Zhang, and Yizhou Sun. <br> <a href="">PGODE: Towards High-quality System Dynamics Modeling</a>. <br><em> In International Conference on Machine Learning (ICML), 2024.</em></p></div></div>    
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/HOPE.png"></div><div class="pub-right"><p><b>Xiao Luo</b>, Jingyang Yuan, Zijie Huang, Huiyu Jiang, Yifang Qin, Wei Ju, Ming Zhang, and Yizhou Sun. <br> <a href="https://proceedings.mlr.press/v202/luo23f/luo23f.pdf">HOPE: High-order Graph ODE For Modeling Interacting Dynamics</a>. <br><em> In International Conference on Machine Learning (ICML), 2023.</em></p></div></div>    
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/CARE.png"></div><div class="pub-right"><p><b>Xiao Luo</b>, Haixin Wang, Zijie Huang, Huiyu Jiang, Abhijeet Sadashiv Gangan, Song Jiang, and Yizhou Sun. <br> <a href="https://openreview.net/pdf?id=lwg3ohkFRv">CARE: Modeling Interacting Dynamics Under Temporal Environmental Variation</a>. <br><em> In Annual Conference on Neural Information Processing Systems (NeurIPS), 2023. (Accept rate: 26.1%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/RIGNN.png"></div><div class="pub-right"><p><b>Xiao Luo</b>, Yusheng Zhao, Zhengyang Mao, Yifang Qin, Wei Ju, Ming Zhang, and Yizhou Sun. <br> <a href="https://openreview.net/pdf?id=qcCE4mC2jI">RIGNN: A Rationale Perspective for Semi-supervised Open-world Graph Classification</a>. <br><em> Transactions on Machine Learning Research (TMLR), 2023.</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/TANGO.jpeg"></div><div class="pub-right"><p>Zijie Huang, Wanjia Zhao, Jingdong Gao, Ziniu Hu, <b>Xiao Luo</b>, Yadi Cao, Yuanzhou Chen, Yizhou Sun, and Wei Wang. <br> <a href="https://openreview.net/pdf?id=8AYetbupoZ">TANGO: Time-reversal Latent GraphODE for Multi-Agent Dynamical Systems</a>. <br><em> In NeurIPS 2023 Workshop DLDE. </em><br><span style="color:red;"> Best Paper Award & Spotlight Talk</span></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/IDEA.jpg"></div><div class="pub-right"><p>Haixin Wang, Hao Wu, Jinan Sun, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b>. <br> <a href="https://openreview.net/pdf?id=77i6itptQW">IDEA: An Invariant Perspective for Efficient Domain Adaptive Image Retrieval</a>. <br><em> In Annual Conference on Neural Information Processing Systems (NeurIPS), 2023. (Accept rate: 26.1%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/FUSE.jpg"></div><div class="pub-right"><p>Fred Xu, Song Jiang, Zijie Huang, <b>Xiao Luo</b>, Shichang Zhang, Yuanzhou Chen, and Yizhou Sun. <br> <a href="">FUSE: Measure-Theoretic Compact Fuzzy Set Representation for Taxonomy Expansion</a>. <br><em> In Annual Meeting of the Association for Computational Linguistics - Findings (ACL Findings), 2024. </em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/NORA.jpg"></div><div class="pub-right"><p>Weikai Li, Zhiping Xiao, <b>Xiao Luo</b>, and Yizhou Sun. <br> <a href="https://arxiv.org/pdf/2403.08333.pdf">Fast Inference of Removal-Based Node Influence</a>. <br><em> In The Web Conference (TheWebConf), 2024. (Accept rate: 20.2%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/CF-GODE.jpg"></div><div class="pub-right"><p>Song Jiang, Zijie Huang, <b>Xiao Luo</b>, and Yizhou Sun. <br> <a href="https://dl.acm.org/doi/pdf/10.1145/3580305.3599272">CF-GODE: Continuous-Time Causal Inference for Multi-Agent Dynamical Systems</a>. <br><em> In ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2023. (Accept rate: 22.1%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/IF.jpg"></div><div class="pub-right"><p>Wei Ju, Yusheng Zhao, Yifang Qin, Siyu Yi, Jingyang Yuan, Zhiping Xiao, <b>Xiao Luo</b>, Xiting Yan, and Ming Zhang. <br> <a href="https://authors.elsevier.com/c/1iifM5a7-GxI6e">COOL: A Conjoint Perspective on Spatio-Temporal Graph Neural Network for Traffic Forecasting</a>. <br><em> Information Fusion, 2024. (<span style="color:red">IF=14.7</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/DIOR.jpg"></div><div class="pub-right"><p>Haixin Wang, Huiyu Jiang, Jinan Sun, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b>. <br> <a href="https://ieeexplore.ieee.org/abstract/document/10239525">DIOR: Learning to Hash with Label Noise via Dual Partition and Contrastive Learning</a>. <br><em> IEEE Transactions on Knowledge and Data Engineering (TKDE), 2023. (<span style="color:red">IF=8.9</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/UGNN.jpg"></div><div class="pub-right"><p><b>Xiao Luo*</b>, Yusheng Zhao*, Yifang Qin*, Wei Ju, and Ming Zhang. <br> <a href="https://arxiv.org/pdf/2305.19598.pdf">Towards Semi-supervised Universal Graph Classification</a>. <br><em> IEEE Transactions on Knowledge and Data Engineering (TKDE), 2023. (<span style="color:red">IF=8.9</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GraphACL.jpg"></div><div class="pub-right"><p><b>Xiao Luo*</b>, Wei Ju*, Yiyang Gu, Zhengyang Mao, Luchen Liu, Yuhui Yuan, and Ming Zhang. <br> <a href="https://dl.acm.org/doi/pdf/10.1145/3624018">Self-supervised Graph-level Representation Learning with Adversarial Contrastive Learning</a>. <br><em> ACM Transactions on Knowledge Discovery from Data (TKDD), 2023. (<span style="color:red">IF=4.0</span>, JCR <span style="color:red">Q2</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/CHCF.jpg"></div><div class="pub-right"><p><b>Xiao Luo*</b>, Daqing Wu*, Yiyang Gu*, Chong Chen, Luchen Liu, Jinwen Ma, Ming Zhang, Minghua Deng, Jianqiang Huang, and Xian-Sheng Hua. <br> <a href="https://dl.acm.org/doi/pdf/10.1145/3611310">Criterion-based Heterogeneous Collaborative Filtering for Multi-behavior Implicit Recommendation</a>. <br><em> ACM Transactions on Knowledge Discovery from Data (TKDD), 2023. (<span style="color:red">IF=4.0</span>, JCR <span style="color:red">Q2</span>)</em></p></div></div>  
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/DEER.jpg"></div><div class="pub-right"><p>Yiyang Gu, Zihao Chen, Yifang Qin, Zhengyang Mao, Zhiping Xiao, Wei Ju, Chong Chen, Xian-Sheng Hua, Yifan Wang, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://arxiv.org/pdf/2305.19598.pdf">DEER: Distribution Divergence-based Graph Contrast for Partial Label Learning on Graphs</a>. <br><em> IEEE Transactions on Multimedia (TMM), 2024. (<span style="color:red">IF=8.4</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GDERec.jpg"></div><div class="pub-right"><p>Yifang Qin, Wei Ju, Hongjun Wu, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://ieeexplore.ieee.org/abstract/document/10379836">Learning Graph ODE for Continuous-Time Sequential Recommendation</a>. <br><em> IEEE Transactions on Knowledge and Data Engineering (TKDE), 2024. (<span style="color:red">IF=8.9</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/CHNN.jpg"></div><div class="pub-right"><p>Nan Yin, Li Shen, Huan Xiong, Bin Gu, Chong Chen, Xian-Sheng Hua, Siwei Liu, and <b>Xiao Luo</b>. <br> <a href="https://www.computer.org/csdl/journal/tp/5555/01/10314020/1RVVeQHAfny">Messages Are Never Propagated Alone: Collaborative Hypergraph Neural Network for Time-series Forecasting</a>. <br><em> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2023. (<span style="color:red">IF=20.8</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/R2FGC.png"></div><div class="pub-right"><p>Si-Yu Yi, Wei Ju, Yifang Qin, Luchen Liu, <b>Xiao Luo</b>, Yong-Dao Zhou, and Ming Zhang. <br> <a href="https://arxiv.org/pdf/2309.04694.pdf">Redundancy-Free Self-Supervised Relational Learning for Graph Clustering</a>. <br><em> IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2023. (<span style="color:red">IF=10.2</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/CoME.png"></div><div class="pub-right"><p>Si-Yu Yi, Zhengyang Mao, Wei Ju, Yong-Dao Zhou, Luchen Liu, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://arxiv.org/pdf/2308.16609.pdf">Towards Long-Tailed Recognition for Graph Classification via Collaborative Experts</a>. <br><em> IEEE Transactions on Big Data (TBD), 2023. (<span style="color:red">IF=7.5</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/TITAN.jpg"></div><div class="pub-right"><p>Xinlong Yang, Haixin Wang, Jinan Sun, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b>. <br> <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_Prototypical_Mixing_and_Retrieval-Based_Refinement_for_Label_Noise-Resistant_Image_Retrieval_ICCV_2023_paper.pdf">Prototypical Mixup and Retrieval-based Refinement for Label Noise-resistant Image Retrieval</a>. <br><em> In International Conference on Computer Vision (ICCV), 2023. (Accept rate: 26.2%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Diff-POI.jpg"></div><div class="pub-right"><p>Yifang Qin, Hongjun Wu, Wei Ju, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://arxiv.org/pdf/2304.07041.pdf">A Diffusion model for POI recommendation</a>. <br><em> ACM Transactions on Information Systems (TOIS), 2023. (<span style="color:red">IF=5.4</span>, JCR <span style="color:red">Q2</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/RAHNet.png"></div><div class="pub-right"><p>Zhengyang Mao, Wei Ju, Yifang Qin, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://arxiv.org/pdf/2308.02335.pdf">RAHNet: Retrieval Augmented Hybrid Network for Long-tailed Graph Classification</a>. <br><em> In ACM International Conference on Multimedia (ACM MM), 2023. (Accept rate: 29.1%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/ALEX.jpg"></div><div class="pub-right"><p>Jingyang Yuan, <b>Xiao Luo</b>, Yifang Qin, Zhengyang Mao, Wei Ju, and Ming Zhang. <br> <a href="https://juweipku.github.io/files/MM23_ALEX.pdf">ALEX: Towards Effective Graph Transfer Learning with Noisy Labels</a>. <br><em> In ACM International Conference on Multimedia (ACM MM), 2023. (Accept rate: 29.1%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/FIVE.jpg"></div><div class="pub-right"><p>Fan Zhang, Xian-Sheng Hua, Chen Chong, and <b>Xiao Luo</b>.<br> <a href="">Fine-grained Prototypical Voting with Heterogeneous Mixup for Semi-supervised 2D-3D Cross-modal Retrieval</a>. <br><em> In IEEE/CVF Computer Vision and Pattern Recognition Conference (CVPR), 2024.</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GraphCEN.jpg"></div><div class="pub-right"><p>Wei Ju, Yifang Qin, Siyu Yi, Zhengyang Mao, Kangjie Zheng, Luchen Liu, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://openreview.net/pdf?id=8wGXnjRLSy">Zero-shot Node Classification with Graph Contrastive Embedding Network</a>. <br><em> Transactions on Machine Learning Research (TMLR), 2023.</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/HSL-RG.png"></div><div class="pub-right"><p>Wei Ju, Zequn Liu, Yifang Qin, Bin Feng, Chen Wang, Zhihui Guo, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://juweipku.github.io/files/NN_HSL-RG.pdf">Few-shot Molecular Property Prediction via Hierarchically Structured Learning on Relation Graphs</a>. <br><em> Neural Networks, 2023. (<span style="color:red">IF=6.0</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/HCPL.jpg"></div><div class="pub-right"><p><b>Xiao Luo</b>, Wei Ju, Yiyang Gu, Yifang Qin, Daqing Wu, Si-Yu Yi, Luchen Liu, and Ming Zhang. <br> <a href="https://dl.acm.org/doi/pdf/10.1145/3626528">Towards Effective Semi-supervised Node Classification with Hybrid Curriculum Pseudo-labeling</a>. <br><em> ACM Transactions on Multimedia Computing Communications and Applications (TOMM), 2023. (<span style="color:red">IF=5.2</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/HEAL.jpg"></div><div class="pub-right"><p>Zhonghui Gu*, <b>Xiao Luo*</b>, Jiaxiao Chen, Minghua Deng, and Luhai Lai. <br> <a href="https://academic.oup.com/bioinformatics/article/39/7/btad410/7208864">Hierarchical Graph Transformer with Contrastive Learning for Protein Function Prediction</a>. <br><em> Bioinformatics, 2023. (<span style="color:red">IF=4.4</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/PEACE.jpg"></div><div class="pub-right"><p>Haixin Wang, Jinan Sun, <b>Xiao Luo</b>, Shikun Zhang, Wei Xiang, Chong Chen, and Xian-Sheng Hua. <br> <a href="https://ieeexplore.ieee.org/abstract/document/10042247"> Towards Effective Domain Adaptive Retrieval</a>. <br><em> IEEE Transactions on Image Processing 2023. (<span style="color:red">IF=10.8</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/DyHSL.png"></div><div class="pub-right"><p>Yusheng Zhao*, <b>Xiao Luo*</b>, Wei Ju, Chong Chen, Xian-Sheng Hua and Ming Zhang. <br> <a href="https://juweipku.github.io/files/ICDE23_DyHSL.pdf">Dynamic Hypergraph Structure Learning for Traffic Flow Forecasting</a>. <br><em> In IEEE International Conference on Data Engineering (ICDE), 2023.</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/SGDA.jpg"></div><div class="pub-right"><p>Ziyue Qiao*, <b>Xiao Luo*</b>, Meng Xiao*, Hao Dong, Yuanchun Zhou and Hui Xiong. <br> <a href="https://www.ijcai.org/proceedings/2023/0253.pdf">Semi-supervised Domain Adaptation in Graph Transfer Learning</a>. <br><em> In International Joint Conference on Artificial Intelligence (IJCAI), 2023. (Accept rate: 15%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/DREAM.jpg"></div><div class="pub-right"><p>Nan Yin, Mengzhu Wang, Zhenghan Chen, Li Shen, Huan Xiong, Bin Gu, and <b>Xiao Luo</b>. <br> <a href="https://openreview.net/pdf?id=4olqbTBt1Y">DREAM: Dual Structured Exploration with Mixup for Open-set Graph Domain Adaption</a>. <br><em> In International Conference on Learning Representations (ICLR), 2024. (Accept rate: 31.0%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/DANCE.jpg"></div><div class="pub-right"><p>Haixin Wang, Jinan Sun, Wei Xiang, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b>. <br> <a href="https://dl.acm.org/doi/pdf/10.1145/3543507.3583445">DANCE: Learning A Domain Adaptive Framework for Deep Hashing</a>. <br><em> In The Web Conference (TheWebConf), 2023. (Accept rate: 19.6%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/CGNN.jpg"></div><div class="pub-right"><p>Jingyang Yuan*, <b>Xiao Luo*</b>, Yifang Qin, Yusheng Zhao, Wei Ju, and Ming Zhang. <br> <a href="https://juweipku.github.io/files/ICASSP_CGNN.pdf">Learning on Graphs under Label Noise</a>. <br><em> In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2023.</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GLCC.jpg"></div><div class="pub-right"><p>Wei Ju, Yiyang Gu, Binqi Chen, Gongbo Sun, Yifang Qin, Xingyuming Liu, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://ojs.aaai.org/index.php/AAAI/article/view/25559">GLCC: A General Framework for Graph-level Clustering</a>. <br><em> In AAAI Conference on Artificial Intelligence (AAAI), 2023.</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/HGSL.jpg"></div><div class="pub-right"><p>Wei Ju, Yiyang Gu, <b>Xiao Luo</b>, Yifan Wang, Haochen Yuan, Huasong Zhong, and Ming Zhang. <br> <a href="https://juweipku.github.io/files/NN-HGCL.pdf">Unsupervised Graph-level Representation Learning with Hierarchical Contrasts</a>. <br><em> Neural Networks, 2022. (<span style="color:red">IF=6.0</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Seg.png"></div><div class="pub-right"><p>Weicong Liang, Yuhui Yuan, Weihong Lin, <b>Xiao Luo</b>, Henghui Ding, Ding Jia, Zheng Zhang, Chao Zhang, and Han Hu. <br> <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/e6c2e85db1f1039177c4495ccd399ac4-Paper-Conference.pdf">Expediting Vision Transformer for Dense Prediction without Fine-tuning</a>. <br><em> In Annual Conference on Neural Information Processing Systems (NeurIPS), 2022. (Accept rate: 25.6%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/KBGNN.png"></div><div class="pub-right"><p>Wei Ju, Yifang Qin, Ziyue Qiao, <b>Xiao Luo</b>, Yifan Wang, Yanjie Fu, and Ming Zhang. <br> <a href="https://arxiv.org/pdf/2210.03969.pdf">Kernel-based Substructure Exploration for Next POI Recommendation</a>. <br><em> In IEEE International Conference on Data Mining (ICDM), 2022. (Accept rate: 9.7%)</em> <br><span style="color:red">Best Paper Finalist</span></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/HEART.jpg"></div><div class="pub-right"><p>Jinan Sun, Haixin Wang, <b>Xiao Luo</b>, Shikun Zhang, Wei Xiang, Chong Chen, and Xian-Sheng Hua. <br> <a href="https://dl.acm.org/doi/abs/10.1145/3503161.3548127">HEART: Towards Effective Hash Codes Against Label Noise</a>. <br><em> In ACM International Conference on Multimedia (ACM MM), 2022. (Accept rate: 27.6%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Face.png"></div><div class="pub-right"><p>Yingjie Chen, Chong Chen, <b>Xiao Luo</b>, Jianqiang Huang, Xian-Sheng Hua, Tao Wang, and Yun Liang. <br> <a href="https://drive.google.com/file/d/1cCGUfAFs28auOx1dMSny0G0apBfcLhKH/view"> Pursuing Knowledge Consistency: Supervised Hierarchical Contrastive Learning for Facial Action Unit Recognition</a>. <br><em> In ACM International Conference on Multimedia (ACM MM), 2022. (Accept rate: 27.6%)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/CLEAR.jpg"></div><div class="pub-right"><p><b>Xiao Luo*</b>, Wei Ju*, Meng Qu, Yiyang Gu, Chong Chen, Minghua Deng, Xian-Sheng Hua, and Ming Zhang. <br> <a href="https://juweipku.github.io/files/TNNLS_CLEAR.pdf">CLEAR: Cluster-enhanced Contrast for Self-supervised Graph Representation Learning</a>. <br><em> IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2022. (<span style="color:red">IF=10.2</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/TGNN.png"></div><div class="pub-right"><p>Wei Ju*, <b>Xiao Luo*</b>, Meng Qu, Yifan Wang, Chong Chen, Minghua Deng, Xian-Sheng Hua, and Ming Zhang. <br> <a href="https://www.ijcai.org/proceedings/2022/0295.pdf">TGNN: A Joint Semi-supervised Framework for Graph-level Classification</a>. <br><em> In International Joint Conference on Artificial Intelligence (IJCAI), 2022. (Accept rate: 14.9%)</em></p></div></div> 
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GPS.jpg"></div><div class="pub-right"><p>Wei Ju, Yiyang Gu, Zhengyang Mao, Ziyue Qiao, Yifang Qin, <b>Xiao Luo</b>, Hui Xiong, and Ming Zhang. <br> <a href="https://arxiv.org/abs/2401.16011">GPS: Graph Contrastive Learning via Multi-scale Augmented Views from Adversarial Pooling</a>. <br><em> Science China Information Sciences (SCIS), 2024. (<span style="color:red">IF=7.3</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/DualGraph.jpg"></div><div class="pub-right"><p><b>Xiao Luo*</b>, Wei Ju*, Meng Qu, Chong Chen, Minghua Deng, Xian-Sheng Hua, and Ming Zhang. <br> <a href="https://juweipku.github.io/files/ICDE_DualGraph.pdf">DualGraph: Improving Semi-supervised Graph Classification via Dual Contrastive Learning</a>. <br><em> In IEEE International Conference on Data Engineering (ICDE), 2022. (Accept rate: 27.1%)</em></p></div></div>	  
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Expectation_Pooling.png"></div><div class="pub-right"><p><b>Xiao Luo*</b>, Xinming Tu*, Yang Ding, Ge Gao, and Minghua Deng. <br> <a href="https://academic.oup.com/bioinformatics/article/36/5/1405/5584233"> Expectation Pooling: An Effective and Interpretable Pooling Method for Predicting DNA-protein Binding </a>. <br><em> Bioinformatics, Volume 36, Issue 5, March 2020, Pages 1405–1412. (<span style="color:red">IF=4.4</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Deepprune.png"></div><div class="pub-right"><p><b>Xiao Luo*</b>, Weilai Chi*, and Minghua Deng. <br> <a href="https://www.frontiersin.org/articles/10.3389/fgene.2019.01145/full">Deepprune: Learning Efficient and Interpretable Convolutional Networks Through Weight Pruning for Predicting DNA-Protein Binding </a>. <br><em> Frontiers in Genetics, Nov 2019. (<span style="color:red">IF=2.8</span>, JCR <span style="color:red">Q2</span>)</em></p></div></div>
-</div>
-</div>   -->
-
-<!-- <div id="tutorial" class="publications">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-star" aria-hidden="true"></i>
-    Tutorial
-  </h1>
-  <div class="pub-list">
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Hash_survey.jpg"></div><div class="pub-right"><p><b>Xiao Luo</b>, Haixin Wang, Daqing Wu, Chong Chen, Minghua Deng, Jianqiang Huang, and Xian-Sheng Hua. <br> <a href="https://dl.acm.org/doi/pdf/10.1145/3532624">A Survey on Deep Hashing Methods</a>. <br><em> ACM Transactions on Knowledge Discovery from Data (TKDD), 2023. (<span style="color:red">IF=4.0</span>, JCR <span style="color:red">Q2</span>)</em></p></div></div>
-<div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Graph_survey.png"></div><div class="pub-right"><p>Wei Ju, Zheng Fang, Yiyang Gu, Zequn Liu, Qingqing Long, Ziyue Qiao, Yifang Qin, Jianhao Shen, Fang Sun, Zhiping Xiao, Junwei Yang, Jingyang Yuan, Yusheng Zhao, Yifan Wang, <b>Xiao Luo</b>, and Ming Zhang. <br> <a href="https://authors.elsevier.com/c/1iiHO_KKNkuaU3">A Comprehensive Survey on Deep Graph Representation Learning</a>. <br><em> Neural Networks, 2024. (<span style="color:red">IF=6.0</span>, JCR <span style="color:red">Q1</span>)</em></p></div></div>  
-</div>
-</div>	 -->
-
-<!-- <div class="wrapper">
-  <div id="awards" class="bio">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-star" aria-hidden="true"></i>
-      Selected Honors & Awards
-    </h1>
-    <ul>
-      <li> Institute for Digital Research and Education Postdoctoral Fellowship, 2023</li>
-      <li> Outstanding Graduates, Beijing, 2023 (top 1 per department)</li>
-      <li> National Scholarship, China, 2020 (top 0.1% nation-wide)</li>
-      <li> President Scholarship, 2019, 2020, 2021 (top 1% university-wide)</li>
-      <li> Merit Student, Peking University, 2018, 2019, 2020, 2021</li>
-      <li> Outstanding Graduates, Nanjing University, 2017</li>
-      <li> National Scholarship, China, 2016 (top 0.1% nation-wide)</li>
-    </ul>
-  </div>
-</div>
-
- -->
-
-
-
-<!-- <div class="wrapper">
-  <div id="teaching" class="bio">
-      <h1 class="md-heading text-left">
-        <i class="fa fa-star" aria-hidden="true"></i>
-        Teaching
-      </h1>  
-      <b>Teaching Assistant</b> for<br> Probability and Statistics, Advanced Mathematics, Linear Algebra, Deep Learning for Bioinformatics 
-  </div>
-</div> -->
-
-<div class="wrapper">
-  <div id="academicservices" class="bio">
-    <div class="bio-body" style="overflow:hidden;">
-  <h1 class="md-heading text-left">
-    <i class="fa fa-star" aria-hidden="true"></i>
-        Academic Services
-      </h1>  
-      <b>Current Associate Editor/Editorial Board Member:</b> BMC Bioinformatics (2023 - ), Pattern Recognition (2025 - ), IEEE Journal of Biomedical and Health Informatics (2025 - ), IEEE Transactions on Emerging Topics in Computational Intelligence (2025 - ).
-<br>
-      <b>Area Chair:</b> ACM MM 2024, ICML 2025, ACL ARR, ACM MM 2025, ECML-PKDD 2025, NeurIPS 2025, ICLR 2026, CVPR 2026 <br>
-<b>Senior PC Member:</b> IJCAI 2025, CIKM 2025, AAAI 2026 <br>
-      <b>PC Member/Conference Reviewer:</b> ECCV 2022, CVPR 2023, IJCAI 2023, KDD 2023, SIGIR 2023, NeurIPS 2023, NeurIPS 2023 Track Datasets and Benchmarks, ACM MM 2023, CIKM 2023, EMNLP 2023, ICDM 2023, ACL ARR 2023, WSDM 2024, AAAI 2024, LOG 2024, DASFAA 2024, ICLR 2024, TheWebConf 2024, SDM 2024, ICASSP 2024, CVPR 2024, RECOMB 2024, IJCAI 2024, ICML 2024, KDD 2024, ECCV 2024, CIKM 2024, NeurIPS 2024, NeurIPS 2024 Track Datasets and Benchmarks, ACL ARR 2024, WSDM 2025, AAAI 2025, KDD 2025, TheWebConf 2025, ICLR 2025<br>
-      <b>Journal Reviewer:</b> TPAMI, TIP, TKDE, TIFS, TNNLS, TMM, TCVST, TOIS, TKDD, TITS, TMLR, TETCI, DMLR, JAIR, CVIU, Neural Networks
-    </div>
-  </div>
-</div>
-
-<div class="disable-links">
-<table style="width:30%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-      <tbody><tr>
-        <td style="width:400%; vertical-align:middle; text-align:center;"><a href="http://luoxiao12.github.io"  title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=b5c0d0&w=a&t=n&d=K913JBzmBzdxhOytHjK18m_ifvQjxzqIpO3hzZgUa8c&co=f5e8dd&ct=000000" style="width: 200%; height: auto;"></a> </td>
-      </tr></tbody>
-    </table>
-</div>	
-
-
-
-
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>Connect me at</li>
-          <li><a href="mailto:">xiao.luo [at] wisc.edu</a></li>
-        </ul>
-      </div>
-<div class="footer-col footer-col-2">
-		<p class="text"></p>
-	</div>
-   
-	<div class="footer-col footer-col-3">
-		<p class="text">The style of this website is borrowed from <a href='http://hexianghu.com/'>Hexiang Hu's</a>.</p>
-	</div>
-  </div>
-  </div>
-
-</footer>
-    <div class="back-to-top">Top</div>
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-    
+      }
+      .menu-icon {
+        display: none;
+        float: right;
+        width: 36px;
+        height: 26px;
+        line-height: 0;
+        padding-top: 10px;
+        text-align: center;
+      }
+      .menu-icon svg {
+        width: 18px;
+        height: 15px;
+      }
+      .trigger {
+        clear: both;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .page-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+      .page-link:hover {
+        background-color: #f0f0f0;
+        color: #007acc;
+      }
+      @media screen and (max-width: 600px) {
+        .menu-icon {
+          display: block;
         }
-    });
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
+        .trigger {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="site-nav">
+        <a href="#" class="menu-icon">
+          <svg viewBox="0 0 18 15">
+            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+          </svg>
+        </a>
+
+        <div class="trigger">
+          <a class="page-link" href="#about-me"><b>Biography</b></a>
+          <a class="page-link" href="#news"><b>News</b></a>
+          <a class="page-link" href="#publications"><b>Publications</b></a>
+          <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
+          <a class="page-link" href="#services"><b>Academic Services</b></a>
+        </div>
+      </nav>
+
+      <header>
+        <div class="about-container">
+          <!-- 左边头像 -->
+          <a class="image avatar"><img src="./assets/img/avatar.png" alt="avatar" /></a>
+          
+          <!-- 右边文字介绍 -->
+          <div class="about-text">
+            <h1>Xiao Luo</h1>
+            <position>Assistant Professor</position>
+            <a href="https://stat.wisc.edu/" rel="noopener"><autocolor>Department of Statistics, University of Wisconsin–Madison</autocolor></a>
+            <br>
+            <email>xiao.luo@wisc.edu</email>
+
+            <div class="social-media">
+              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button github">
+                <i class="ai ai-google-scholar-square icon-github"></i>
+                <span></span>
+              </a>
+
+              <a href="https://github.com/luoxiao12" class="icon-button github">
+                <i class="fa fa-github icon-github"></i>
+                <span></span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin">
+                <i class="fa fa-linkedin icon-linkedin"></i>
+                <span></span>
+              </a>
+              
+              <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter">
+                <i class="fa fa-twitter icon-twitter"></i>
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <!-- About Me 放在最上面 -->
+        <h2 id="about-me">About Me</h2>
+        <p>
+          I'm an Assistant Professor at the Department of Statistics, University of Wisconsin–Madison. 
+          Previously, I was a postdoctoral researcher in the Department of Computer Science, UCLA, 
+          under the supervision of Prof. <a href="http://web.cs.ucla.edu/~yzsun/">Yizhou Sun</a> and 
+          Prof. <a href="https://web.cs.ucla.edu/~weiwang/">Wei Wang</a>. 
+          I completed my Ph.D. at <a href="https://english.pku.edu.cn/">Peking University (PKU)</a> 
+          under the supervision of Prof. 
+          <a href="https://www.oir.pku.edu.cn/cqben/info/1002/1770.htm">Minghua Deng</a>. 
+          I also work closely with Prof. <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a> 
+          and Prof. <a href="https://medicine.yale.edu/profile/xiting-yan/">Xiting Yan</a> at Yale University.
+
+          I'm a machine learning researcher with a focus on interdisciplinary applications (AI4Science). Recently, I'm focused on Large Language Model (LLM) Post-training, LLM (Agent) Applications, and Machine Learning for Graphs and Dynamical Systems. 
+
+          If you are interested in my research or would like to work with me, please feel free to email me (<a href="mailto:xiao.luo@wisc.edu">xiao.luo@wisc.edu</a>)!
+        </p>
+
+        <h2 id="news">News</h2>
+        <ul>
+          <li><strong>Sep 2025:</strong> Invited as an Area Chair for CVPR 2026.</li>
+          <li><strong>Aug 2025:</strong> Invited as an Area Chair for ICLR 2026.</li>
+        </ul>
+
+        <!-- 其他部分保持不变，这里省略 News/Publications/Services -->
+        <h2 id="publications">Selected Publications</h2>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Protein.jpg"></div><div class="pub-right"><p>Yijia Xiao, Wanjia Zhao, Junkai Zhang, Yiqiao Jin, Han Zhang, Zhicheng Ren, Renliang Sun, Haixin Wang, Guancheng Wan, Pan Lu, <b>Xiao Luo</b>, Yu Zhang, James Zou, Yizhou Sun, and Wei Wang. <br> <a href="">Protein Large Language Models: A Comprehensive Survey</a>. <br><em> In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Audio.jpg"></div><div class="pub-right"><p>Yusheng Zhao, <b>Xiao Luo</b>, Junyu Luo, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang. <br> <a href="">Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness</a>. <br><em> In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/SLOGAN.jpg"></div><div class="pub-right"><p>Junyu Luo, Yuhao Tang, Yiwei Fu, <b>Xiao Luo</b>, Zhizhuo Kou, Zhiping Xiao, Wei Ju, Wentao Zhang, and Ming Zhang. <br> <a href="">Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GREAT.png"></div><div class="pub-right"><p>Guancheng Wan, Zijie Huang, Wanjia Zhao, <b>Xiao Luo</b>, Yizhou Sun, and Wei Wang. <br> <a href="">Rethink GraphODE Generalization within Coupled Dynamical System</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Fair.jpg"></div><div class="pub-right"><p>Yifan Wang, Hourun Li, Ling Yue, Zhiping Xiao, Jia Yang, Changling Zhou, Wei Ju, Ming Zhang, and <b>Xiao Luo</b>. <br> <a href="">DANCE: Dual Unbiased Expansion with Group-acquired Alignment for Out-of-distribution Graph Fairness Learning</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GACL.png"></div><div class="pub-right"><p>Ziyue Qiao, Qianyi Cai, Hao Dong, Jiawei Gu, Pengyang Wang, Meng Xiao, <b>Xiao Luo</b>, and Hui Xiong. <br> <a href="">GCAL: Adapting Graph Models to Evolving Domain Shifts</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/ACCESS.jpg"></div><div class="pub-right"><p>Yusheng Zhao, Qixin Zhang, <b>Xiao Luo</b>, Junyu Luo, Wei Ju, Zhiping Xiao, and Ming Zhang. <br> <a href="">Test-time Adaptation on Graphs via Adaptive Subgraph-based Selection and Regularized Prototypes</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Fin.jpg"></div><div class="pub-right"><p>Junyu Luo, Zhizhuo Kou, Liming Yang, <b>Xiao Luo</b>, Jinsheng Huang, Zhiping Xiao, Jingshu Peng, Chengzhong Liu, Jiaming Ji, Xuanzhe Liu, Sirui Han, Ming Zhang, and Yike Guo. <br> <a href="">FinMME: A Financial Multi-Modal Evaluation Dataset</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics (ACL), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Traffic.jpg"></div><div class="pub-right"><p>Yusheng Zhao, <b>Xiao Luo</b>, Haomin Wen, Zhiping Xiao, Wei Ju, Ming Zhang. <br> <a href="">Embracing Large Language Models in Traffic Flow Forecasting</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</em> (TOP AI Conference)</p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/scRAG.jpg"></div><div class="pub-right"><p>Zhiyin Yu, Chao Zheng, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b>. <br> <a href="">scRAG: Hybrid Retrieval-Augmented Generation for LLM-based Cross-Tissue Single-Cell Annotation</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</em></p></div></div>
+        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/MARK.jpg"></div><div class="pub-right"><p>Yiwei Fu, Yuxing Zhang, Chunchun Chen, Jianwen Ma, Quan Yuan, Rong-Cheng Tu, Xinli Huang, Wei Ye, <b>Xiao Luo</b>, and Minghua Deng. <br> <a href="">MARK: Multi-agent Collaboration with Ranking Guidance for Text-attributed Graph Clustering</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</em></p></div></div>  
+
+        <h2 id="awards">Selected Awards</h2>
+        <ul>
+          <li>Chancellor's Award for Postdoctoral Research, UCLA</li>
+          <li>NeurIPS 2023 Workshop DLDE, Best Paper Award</li>
+          <li>Institute for Digital Research and Education Postdoctoral Fellowship, UCLA</li>
+          <li>ICDM 2022 Best Paper Candidate Award</li>
+        </ul>
+
+        <h2 id="services">Academic Services</h2>
+        <p><strong>Current Associate Editor/Editorial Board Member:</strong> BMC Bioinformatics (2023 - ), Pattern Recognition (2025 - ), IEEE Journal of Biomedical and Health Informatics (2025 - ), IEEE Transactions on Emerging Topics in Computational Intelligence (2025 - ).</p>
+        
+        <p><strong>Area Chair:</strong> ACM MM 2024, ICML 2025, ACL ARR, ACM MM 2025, ECML-PKDD 2025, NeurIPS 2025, ICLR 2026, CVPR 2026</p>
+        
+        <p><strong>Senior PC Member:</strong> IJCAI 2025, CIKM 2025, AAAI 2026</p>
+      </section>
+
+      <footer></footer>
+    </div>
   </body>
-
-<!--
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-60071442-1', 'auto');
-  ga('send', 'pageview');
-</script>
--->
-
-<!--<script src="custom-pub.js"></script>-->
 </html>
