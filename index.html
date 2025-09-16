@@ -15,10 +15,10 @@
     <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" 
-          integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" 
-          integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" 
+          integrity="sha512-Wws13SgJt+muD88TxUonJcGndYw03+Is8+TqdruJHZg57Sm00JpYdQdCMU0kzDYu7vZ4V6caZISJ8TkuyRkxEw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
@@ -41,6 +41,9 @@
         margin-bottom: 40px;
         padding: 20px 0;
         text-align: center;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
       }
       .avatar-container {
         flex-shrink: 0;
@@ -120,17 +123,52 @@
         color: #0066cc;
       }
       .icon-button {
+        text-decoration: none !important;
+        display: inline-block !important;
+        color: #666 !important;
+        transition: all 0.3s ease;
         padding: 8px;
         border-radius: 4px;
-        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
       .icon-button:hover {
-        background-color: #f0f0f0;
+        color: #0066cc !important;
         transform: translateY(-2px);
+        background-color: #f0f0f0;
+      }
+      .icon-button:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        transition: left 0.5s;
+      }
+      .icon-button:hover:before {
+        left: 100%;
       }
       .icon-button i {
         display: inline-block;
         font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+      .icon-button:hover i {
+        transform: scale(1.1);
+        animation: pulse 0.6s ease-in-out;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1.1); }
       }
       /* 列表缩进样式 */
       ul {
@@ -152,7 +190,7 @@
         background-color: #fafafa;
       }
       .pub-left {
-        width: 250px;
+        width: 300px;
         flex-shrink: 0;
       }
       .intro-img {
@@ -174,13 +212,13 @@
       }
       .pub-title {
         font-weight: bold;
-        font-size: 1.1rem;
         margin-bottom: 8px;
         color: #333;
       }
       .pub-authors {
         color: #0066cc;
         margin-bottom: 8px;
+        font-size: 0.95rem;
       }
       .pub-links {
         color: #8B4513;
@@ -292,20 +330,20 @@
             </div>
 
             <div class="social-media">
-              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button">
+              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button" target="_blank">
                 <i class="ai ai-google-scholar-square"></i>
               </a>
 
-              <a href="https://github.com/luoxiao12" class="icon-button">
-                <i class="fa fa-github"></i>
+              <a href="https://github.com/luoxiao12" class="icon-button" target="_blank">
+                <i class="fab fa-github"></i>
               </a>
 
-              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button">
-                <i class="fa fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button" target="_blank">
+                <i class="fab fa-linkedin"></i>
               </a>
               
-              <a href="https://twitter.com/XiaoLuo_12" class="icon-button">
-                <i class="fa fa-twitter"></i>
+              <a href="https://twitter.com/XiaoLuo_12" class="icon-button" target="_blank">
+                <i class="fab fa-twitter"></i>
               </a>
             </div>
           </div>
@@ -352,20 +390,110 @@
           <div class="pub-right">
             <div class="pub-title">Protein Large Language Models: A Comprehensive Survey</div>
             <div class="pub-authors">Yijia Xiao, Wanjia Zhao, Junkai Zhang, Yiqiao Jin, Han Zhang, Zhicheng Ren, Renliang Sun, Haixin Wang, Guancheng Wan, Pan Lu, <b>Xiao Luo</b>, Yu Zhang, James Zou, Yizhou Sun, and Wei Wang</div>
-            <div class="pub-links">[Paper] [Code] [Project Website]</div>
             <div class="pub-venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025</div>
           </div>
         </div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Audio.jpg"></div><div class="pub-right"><p>Yusheng Zhao, <b>Xiao Luo</b>, Junyu Luo, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang. <br> <a href="">Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness</a>. <br><em> In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/SLOGAN.jpg"></div><div class="pub-right"><p>Junyu Luo, Yuhao Tang, Yiwei Fu, <b>Xiao Luo</b>, Zhizhuo Kou, Zhiping Xiao, Wei Ju, Wentao Zhang, and Ming Zhang. <br> <a href="">Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GREAT.png"></div><div class="pub-right"><p>Guancheng Wan, Zijie Huang, Wanjia Zhao, <b>Xiao Luo</b>, Yizhou Sun, and Wei Wang. <br> <a href="">Rethink GraphODE Generalization within Coupled Dynamical System</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Fair.jpg"></div><div class="pub-right"><p>Yifan Wang, Hourun Li, Ling Yue, Zhiping Xiao, Jia Yang, Changling Zhou, Wei Ju, Ming Zhang, and <b>Xiao Luo</b>. <br> <a href="">DANCE: Dual Unbiased Expansion with Group-acquired Alignment for Out-of-distribution Graph Fairness Learning</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GACL.png"></div><div class="pub-right"><p>Ziyue Qiao, Qianyi Cai, Hao Dong, Jiawei Gu, Pengyang Wang, Meng Xiao, <b>Xiao Luo</b>, and Hui Xiong. <br> <a href="">GCAL: Adapting Graph Models to Evolving Domain Shifts</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/ACCESS.jpg"></div><div class="pub-right"><p>Yusheng Zhao, Qixin Zhang, <b>Xiao Luo</b>, Junyu Luo, Wei Ju, Zhiping Xiao, and Ming Zhang. <br> <a href="">Test-time Adaptation on Graphs via Adaptive Subgraph-based Selection and Regularized Prototypes</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Fin.jpg"></div><div class="pub-right"><p>Junyu Luo, Zhizhuo Kou, Liming Yang, <b>Xiao Luo</b>, Jinsheng Huang, Zhiping Xiao, Jingshu Peng, Chengzhong Liu, Jiaming Ji, Xuanzhe Liu, Sirui Han, Ming Zhang, and Yike Guo. <br> <a href="">FinMME: A Financial Multi-Modal Evaluation Dataset</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics (ACL), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Traffic.jpg"></div><div class="pub-right"><p>Yusheng Zhao, <b>Xiao Luo</b>, Haomin Wen, Zhiping Xiao, Wei Ju, Ming Zhang. <br> <a href="">Embracing Large Language Models in Traffic Flow Forecasting</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</em> (TOP AI Conference)</p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/scRAG.jpg"></div><div class="pub-right"><p>Zhiyin Yu, Chao Zheng, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b>. <br> <a href="">scRAG: Hybrid Retrieval-Augmented Generation for LLM-based Cross-Tissue Single-Cell Annotation</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</em></p></div></div>
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/MARK.jpg"></div><div class="pub-right"><p>Yiwei Fu, Yuxing Zhang, Chunchun Chen, Jianwen Ma, Quan Yuan, Rong-Cheng Tu, Xinli Huang, Wei Ye, <b>Xiao Luo</b>, and Minghua Deng. <br> <a href="">MARK: Multi-agent Collaboration with Ranking Guidance for Text-attributed Graph Clustering</a>. <br><em> In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</em></p></div></div>  
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/Audio.jpg" alt="Audio-Visual MLLM Evaluation">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness</div>
+            <div class="pub-authors">Yusheng Zhao, <b>Xiao Luo</b>, Junyu Luo, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang</div>
+            <div class="pub-venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/SLOGAN.jpg" alt="Sparse Causal Discovery">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation</div>
+            <div class="pub-authors">Junyu Luo, Yuhao Tang, Yiwei Fu, <b>Xiao Luo</b>, Zhizhuo Kou, Zhiping Xiao, Wei Ju, Wentao Zhang, and Ming Zhang</div>
+            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/GREAT.png" alt="GraphODE Generalization">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">Rethink GraphODE Generalization within Coupled Dynamical System</div>
+            <div class="pub-authors">Guancheng Wan, Zijie Huang, Wanjia Zhao, <b>Xiao Luo</b>, Yizhou Sun, and Wei Wang</div>
+            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/Fair.jpg" alt="DANCE Graph Fairness">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">DANCE: Dual Unbiased Expansion with Group-acquired Alignment for Out-of-distribution Graph Fairness Learning</div>
+            <div class="pub-authors">Yifan Wang, Hourun Li, Ling Yue, Zhiping Xiao, Jia Yang, Changling Zhou, Wei Ju, Ming Zhang, and <b>Xiao Luo</b></div>
+            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/GACL.png" alt="GCAL Domain Adaptation">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">GCAL: Adapting Graph Models to Evolving Domain Shifts</div>
+            <div class="pub-authors">Ziyue Qiao, Qianyi Cai, Hao Dong, Jiawei Gu, Pengyang Wang, Meng Xiao, <b>Xiao Luo</b>, and Hui Xiong</div>
+            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/ACCESS.jpg" alt="Test-time Adaptation on Graphs">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">Test-time Adaptation on Graphs via Adaptive Subgraph-based Selection and Regularized Prototypes</div>
+            <div class="pub-authors">Yusheng Zhao, Qixin Zhang, <b>Xiao Luo</b>, Junyu Luo, Wei Ju, Zhiping Xiao, and Ming Zhang</div>
+            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/Fin.jpg" alt="FinMME Dataset">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">FinMME: A Financial Multi-Modal Evaluation Dataset</div>
+            <div class="pub-authors">Junyu Luo, Zhizhuo Kou, Liming Yang, <b>Xiao Luo</b>, Jinsheng Huang, Zhiping Xiao, Jingshu Peng, Chengzhong Liu, Jiaming Ji, Xuanzhe Liu, Sirui Han, Ming Zhang, and Yike Guo</div>
+            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/Traffic.jpg" alt="Traffic Flow Forecasting">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">Embracing Large Language Models in Traffic Flow Forecasting</div>
+            <div class="pub-authors">Yusheng Zhao, <b>Xiao Luo</b>, Haomin Wen, Zhiping Xiao, Wei Ju, Ming Zhang</div>
+            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025</div>
+            <div class="pub-award">TOP AI Conference</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/scRAG.jpg" alt="scRAG Single-Cell Annotation">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">scRAG: Hybrid Retrieval-Augmented Generation for LLM-based Cross-Tissue Single-Cell Annotation</div>
+            <div class="pub-authors">Zhiyin Yu, Chao Zheng, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b></div>
+            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025</div>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/MARK.jpg" alt="MARK Graph Clustering">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">MARK: Multi-agent Collaboration with Ranking Guidance for Text-attributed Graph Clustering</div>
+            <div class="pub-authors">Yiwei Fu, Yuxing Zhang, Chunchun Chen, Jianwen Ma, Quan Yuan, Rong-Cheng Tu, Xinli Huang, Wei Ye, <b>Xiao Luo</b>, and Minghua Deng</div>
+            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025</div>
+          </div>
+        </div>  
 
         <h2 id="awards">Selected Awards</h2>
         <ul>
