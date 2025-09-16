@@ -15,10 +15,9 @@
     <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
     <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
@@ -80,11 +79,12 @@
         text-align: left;
       }
       .name-title {
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: bold;
         margin: 0 0 10px 0;
         color: #333;
         font-family: 'Times New Roman', serif;
+        text-align: center;
       }
       .position-title {
         font-size: 1.6rem;
@@ -205,17 +205,18 @@
         background-color: #fafafa;
       }
       .pub-left {
-        width: 50%;
+        width: 45%;
         flex-shrink: 0;
       }
       .intro-img {
         width: 100%;
         height: auto;
-        max-height: 180px;
-        object-fit: cover;
+        min-height: 200px;
+        object-fit: contain;
         border: 2px solid #8B4513;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        background-color: #fff;
       }
       .pub-right {
         flex: 1;
@@ -244,6 +245,7 @@
         color: #333;
         font-style: italic;
         margin-bottom: 5px;
+        font-size: 0.9rem;
       }
       .pub-award {
         color: #cc0000;
@@ -351,15 +353,15 @@
               </a>
 
               <a href="https://github.com/luoxiao12" class="icon-button github" target="_blank">
-                <i class="fa fa-github icon-github"></i>
+                <i class="fab fa-github"></i>
               </a>
 
               <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin" target="_blank">
-                <i class="fa fa-linkedin icon-linkedin"></i>
+                <i class="fab fa-linkedin"></i>
               </a>
               
               <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter" target="_blank">
-                <i class="fa fa-twitter icon-twitter"></i>
+                <i class="fab fa-twitter"></i>
               </a>
             </div>
           </div>
@@ -518,15 +520,17 @@
           <li>ICDM 2022 Best Paper Candidate Award</li>
         </ul>
 
-        <h2 id="services">Academic Services</h2>
-        <p><strong>Current Associate Editor/Editorial Board Member:</strong> BMC Bioinformatics (2023 - ), Pattern Recognition (2025 - ), IEEE Journal of Biomedical and Health Informatics (2025 - ), IEEE Transactions on Emerging Topics in Computational Intelligence (2025 - ).</p>
-        
-        <p><strong>Area Chair:</strong> ACM MM 2024, ICML 2025, ACL ARR, ACM MM 2025, ECML-PKDD 2025, NeurIPS 2025, ICLR 2026, CVPR 2026</p>
-        
-        <p><strong>Senior PC Member:</strong> IJCAI 2025, CIKM 2025, AAAI 2026</p>
+        <h2 id="services" style="text-align: center;">Academic Services</h2>
+        <div style="text-align: center;">
+          <p><strong>Current Associate Editor/Editorial Board Member:</strong> BMC Bioinformatics (2023 - ), Pattern Recognition (2025 - ), IEEE Journal of Biomedical and Health Informatics (2025 - ), IEEE Transactions on Emerging Topics in Computational Intelligence (2025 - ).</p>
+          
+          <p><strong>Area Chair:</strong> ACM MM 2024, ICML 2025, ACL ARR, ACM MM 2025, ECML-PKDD 2025, NeurIPS 2025, ICLR 2026, CVPR 2026</p>
+          
+          <p><strong>Senior PC Member:</strong> IJCAI 2025, CIKM 2025, AAAI 2026</p>
+        </div>
       </section>
 
-      <div class="disable-links">
+      <div class="disable-links" style="text-align: center; margin: 40px 0;">
         <table style="width:30%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tbody><tr>
             <td style="width:400%; vertical-align:middle; text-align:center;"><a href="http://luoxiao12.github.io"  title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=b5c0d0&w=a&t=n&d=K913JBzmBzdxhOytHjK18m_ifvQjxzqIpO3hzZgUa8c&co=f5e8dd&ct=000000" style="width: 200%; height: auto;"></a> </td>
