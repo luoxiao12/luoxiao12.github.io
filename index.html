@@ -26,7 +26,7 @@
     <style>
       /* 页面整体宽度 */
       .wrapper {
-        max-width: 1100px;
+        max-width: 800px;
         margin: 0 auto;
       }
       section {
@@ -35,10 +35,12 @@
       /* 头像 + 简介并排 */
       .about-container {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         gap: 40px;
         margin-bottom: 40px;
         padding: 20px 0;
+        text-align: center;
       }
       .avatar-container {
         flex-shrink: 0;
@@ -57,7 +59,7 @@
       }
       .about-text {
         flex: 1;
-        padding-top: 10px;
+        text-align: left;
       }
       .name-title {
         font-size: 2.5rem;
@@ -90,8 +92,16 @@
       .contact-item {
         font-size: 1rem;
         color: #555;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
         font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .contact-item i {
+        color: #666;
+        width: 16px;
+        text-align: center;
       }
       .social-media {
         display: flex;
@@ -104,6 +114,7 @@
         transition: color 0.3s ease;
         text-decoration: none;
         display: inline-block;
+        margin: 0 5px;
       }
       .social-link:hover, .icon-button:hover {
         color: #0066cc;
@@ -117,6 +128,10 @@
         background-color: #f0f0f0;
         transform: translateY(-2px);
       }
+      .icon-button i {
+        display: inline-block;
+        font-size: 1.5rem;
+      }
       /* 列表缩进样式 */
       ul {
         padding-left: 20px;
@@ -125,22 +140,61 @@
         margin-bottom: 8px;
         line-height: 1.5;
       }
-      /* 出版物图片自动调整大小 */
+      /* 出版物布局样式 */
+      .pub {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #fafafa;
+      }
+      .pub-left {
+        width: 250px;
+        flex-shrink: 0;
+      }
       .intro-img {
         width: 100%;
         height: auto;
-        max-width: 200px;
-        max-height: 150px;
+        max-height: 180px;
         object-fit: cover;
+        border: 2px solid #8B4513;
         border-radius: 4px;
-      }
-      .pub-left {
-        width: 200px;
-        flex-shrink: 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
       .pub-right {
         flex: 1;
-        padding-left: 20px;
+        padding-left: 0;
+      }
+      .pub-right p {
+        margin: 0;
+        line-height: 1.6;
+      }
+      .pub-title {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: #333;
+      }
+      .pub-authors {
+        color: #0066cc;
+        margin-bottom: 8px;
+      }
+      .pub-links {
+        color: #8B4513;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      .pub-venue {
+        color: #333;
+        font-style: italic;
+        margin-bottom: 5px;
+      }
+      .pub-award {
+        color: #cc0000;
+        font-weight: bold;
       }
       /* 导航菜单样式 */
       .site-nav {
@@ -222,35 +276,36 @@
           <!-- 右边文字介绍 -->
           <div class="about-text">
             <h1 class="name-title">Xiao Luo</h1>
-            <div class="position-title">Assistant Professor</div>
             <div class="affiliation">
               <a href="https://stat.wisc.edu/" class="dept-link">Department of Statistics</a><br>
               <a href="https://www.wisc.edu/" class="univ-link">University of Wisconsin–Madison</a>
             </div>
             <div class="contact-info">
-              <div class="contact-item">Office: 6667 Morgridge Hall</div>
-              <div class="contact-item">Email: xiao.luo@wisc.edu</div>
+              <div class="contact-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <span>6667 Morgridge Hall</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <span>xiao.luo@wisc.edu</span>
+              </div>
             </div>
 
             <div class="social-media">
-              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button github">
-                <i class="ai ai-google-scholar-square icon-github"></i>
-                <span></span>
+              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button">
+                <i class="ai ai-google-scholar-square"></i>
               </a>
 
-              <a href="https://github.com/luoxiao12" class="icon-button github">
-                <i class="fa fa-github icon-github"></i>
-                <span></span>
+              <a href="https://github.com/luoxiao12" class="icon-button">
+                <i class="fa fa-github"></i>
               </a>
 
-              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin">
-                <i class="fa fa-linkedin icon-linkedin"></i>
-                <span></span>
+              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button">
+                <i class="fa fa-linkedin"></i>
               </a>
               
-              <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter">
-                <i class="fa fa-twitter icon-twitter"></i>
-                <span></span>
+              <a href="https://twitter.com/XiaoLuo_12" class="icon-button">
+                <i class="fa fa-twitter"></i>
               </a>
             </div>
           </div>
@@ -290,7 +345,17 @@
         <h2 id="publications">Selected Publications</h2>
         
 
-        <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Protein.jpg"></div><div class="pub-right"><p>Yijia Xiao, Wanjia Zhao, Junkai Zhang, Yiqiao Jin, Han Zhang, Zhicheng Ren, Renliang Sun, Haixin Wang, Guancheng Wan, Pan Lu, <b>Xiao Luo</b>, Yu Zhang, James Zou, Yizhou Sun, and Wei Wang. <br> <a href="">Protein Large Language Models: A Comprehensive Survey</a>. <br><em> In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</em></p></div></div>
+        <div class="pub">
+          <div class="pub-left">
+            <img class="intro-img" src="image/Protein.jpg" alt="Protein LLM Survey">
+          </div>
+          <div class="pub-right">
+            <div class="pub-title">Protein Large Language Models: A Comprehensive Survey</div>
+            <div class="pub-authors">Yijia Xiao, Wanjia Zhao, Junkai Zhang, Yiqiao Jin, Han Zhang, Zhicheng Ren, Renliang Sun, Haixin Wang, Guancheng Wan, Pan Lu, <b>Xiao Luo</b>, Yu Zhang, James Zou, Yizhou Sun, and Wei Wang</div>
+            <div class="pub-links">[Paper] [Code] [Project Website]</div>
+            <div class="pub-venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025</div>
+          </div>
+        </div>
         <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Audio.jpg"></div><div class="pub-right"><p>Yusheng Zhao, <b>Xiao Luo</b>, Junyu Luo, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang. <br> <a href="">Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness</a>. <br><em> In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</em></p></div></div>
         <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/SLOGAN.jpg"></div><div class="pub-right"><p>Junyu Luo, Yuhao Tang, Yiwei Fu, <b>Xiao Luo</b>, Zhizhuo Kou, Zhiping Xiao, Wei Ju, Wentao Zhang, and Ming Zhang. <br> <a href="">Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
         <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/GREAT.png"></div><div class="pub-right"><p>Guancheng Wan, Zijie Huang, Wanjia Zhao, <b>Xiao Luo</b>, Yizhou Sun, and Wei Wang. <br> <a href="">Rethink GraphODE Generalization within Coupled Dynamical System</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
