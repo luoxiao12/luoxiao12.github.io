@@ -98,13 +98,32 @@
         gap: 15px;
         margin-top: 20px;
       }
-      .social-link {
+      .social-link, .icon-button {
         color: #666;
         font-size: 1.5rem;
         transition: color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
       }
-      .social-link:hover {
+      .social-link:hover, .icon-button:hover {
         color: #0066cc;
+      }
+      .icon-button {
+        padding: 8px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+      .icon-button:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-2px);
+      }
+      /* 列表缩进样式 */
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
       }
       /* 出版物图片自动调整大小 */
       .intro-img {
@@ -214,17 +233,24 @@
             </div>
 
             <div class="social-media">
-              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="social-link">
-                <i class="ai ai-google-scholar-square"></i>
+              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button github">
+                <i class="ai ai-google-scholar-square icon-github"></i>
+                <span></span>
               </a>
-              <a href="https://github.com/luoxiao12" class="social-link">
-                <i class="fa fa-github"></i>
+
+              <a href="https://github.com/luoxiao12" class="icon-button github">
+                <i class="fa fa-github icon-github"></i>
+                <span></span>
               </a>
-              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="social-link">
-                <i class="fa fa-linkedin"></i>
+
+              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin">
+                <i class="fa fa-linkedin icon-linkedin"></i>
+                <span></span>
               </a>
-              <a href="https://twitter.com/XiaoLuo_12" class="social-link">
-                <i class="fa fa-twitter"></i>
+              
+              <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter">
+                <i class="fa fa-twitter icon-twitter"></i>
+                <span></span>
               </a>
             </div>
           </div>
