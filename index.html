@@ -36,26 +36,92 @@
       .about-container {
         display: flex;
         align-items: flex-start;
-        gap: 30px;
-        margin-bottom: 30px;
+        gap: 40px;
+        margin-bottom: 40px;
+        padding: 20px 0;
+      }
+      .avatar-container {
+        flex-shrink: 0;
+      }
+      .profile-photo, .circle-img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .circle-img {
+        border-radius: 50%;
+      }
+      .border-dark {
+        border: 3px solid #333;
       }
       .about-text {
         flex: 1;
+        padding-top: 10px;
       }
-      .about-text h1 {
-        margin-top: 0;
+      .name-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 0 0 10px 0;
+        color: #333;
+        font-family: 'Times New Roman', serif;
       }
-      .about-text position {
+      .position-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0 0 15px 0;
+        color: #333;
+      }
+      .affiliation {
+        margin-bottom: 15px;
+      }
+      .dept-link, .univ-link {
+        color: #0066cc;
+        text-decoration: underline;
         font-size: 1.1rem;
-        display: block;
-        margin-top: 5px;
+        line-height: 1.4;
       }
-      .social-icons {
-        margin-top: 10px;
+      .dept-link:hover, .univ-link:hover {
+        color: #004499;
       }
-      .image.avatar img {
-        border-radius: 50%;
-        max-width: 180px;
+      .contact-info {
+        margin-bottom: 20px;
+      }
+      .contact-item {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 5px;
+        font-family: Arial, sans-serif;
+      }
+      .social-media {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      .social-link {
+        color: #666;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      .social-link:hover {
+        color: #0066cc;
+      }
+      /* 出版物图片自动调整大小 */
+      .intro-img {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      .pub-left {
+        width: 200px;
+        flex-shrink: 0;
+      }
+      .pub-right {
+        flex: 1;
+        padding-left: 20px;
       }
       /* 导航菜单样式 */
       .site-nav {
@@ -130,35 +196,35 @@
       <header>
         <div class="about-container">
           <!-- 左边头像 -->
-          <a class="image avatar"><img src="./assets/img/avatar.png" alt="avatar" /></a>
+          <div class="avatar-container">
+            <img id="profile-avatar" src="image/me2.jpg" alt="Me" class="circle-img border-dark" />
+          </div>
           
           <!-- 右边文字介绍 -->
           <div class="about-text">
-            <h1>Xiao Luo</h1>
-            <position>Assistant Professor</position>
-            <a href="https://stat.wisc.edu/" rel="noopener"><autocolor>Department of Statistics, University of Wisconsin–Madison</autocolor></a>
-            <br>
-            <email>xiao.luo@wisc.edu</email>
+            <h1 class="name-title">Xiao Luo</h1>
+            <div class="position-title">Assistant Professor</div>
+            <div class="affiliation">
+              <a href="https://stat.wisc.edu/" class="dept-link">Department of Statistics</a><br>
+              <a href="https://www.wisc.edu/" class="univ-link">University of Wisconsin–Madison</a>
+            </div>
+            <div class="contact-info">
+              <div class="contact-item">Office: 6667 Morgridge Hall</div>
+              <div class="contact-item">Email: xiao.luo@wisc.edu</div>
+            </div>
 
             <div class="social-media">
-              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="icon-button github">
-                <i class="ai ai-google-scholar-square icon-github"></i>
-                <span></span>
+              <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" class="social-link">
+                <i class="ai ai-google-scholar-square"></i>
               </a>
-
-              <a href="https://github.com/luoxiao12" class="icon-button github">
-                <i class="fa fa-github icon-github"></i>
-                <span></span>
+              <a href="https://github.com/luoxiao12" class="social-link">
+                <i class="fa fa-github"></i>
               </a>
-
-              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin">
-                <i class="fa fa-linkedin icon-linkedin"></i>
-                <span></span>
+              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="social-link">
+                <i class="fa fa-linkedin"></i>
               </a>
-              
-              <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter">
-                <i class="fa fa-twitter icon-twitter"></i>
-                <span></span>
+              <a href="https://twitter.com/XiaoLuo_12" class="social-link">
+                <i class="fa fa-twitter"></i>
               </a>
             </div>
           </div>
@@ -178,9 +244,13 @@
           <a href="https://www.oir.pku.edu.cn/cqben/info/1002/1770.htm">Minghua Deng</a>. 
           I also work closely with Prof. <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a> 
           and Prof. <a href="https://medicine.yale.edu/profile/xiting-yan/">Xiting Yan</a> at Yale University.
+        </p>
 
-          I'm a machine learning researcher with a focus on interdisciplinary applications (AI4Science). Recently, I'm focused on Large Language Model (LLM) Post-training, LLM (Agent) Applications, and Machine Learning for Graphs and Dynamical Systems. 
+        <p>
+          I'm a machine learning researcher with a focus on interdisciplinary applications (AI4Science). Recently, I'm focused on Large Language Model (LLM) Post-training, LLM (Agent) Applications, and Machine Learning for Graphs and Dynamical Systems.
+        </p>
 
+        <p>
           If you are interested in my research or would like to work with me, please feel free to email me (<a href="mailto:xiao.luo@wisc.edu">xiao.luo@wisc.edu</a>)!
         </p>
 
@@ -192,6 +262,8 @@
 
         <!-- 其他部分保持不变，这里省略 News/Publications/Services -->
         <h2 id="publications">Selected Publications</h2>
+        
+
         <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Protein.jpg"></div><div class="pub-right"><p>Yijia Xiao, Wanjia Zhao, Junkai Zhang, Yiqiao Jin, Han Zhang, Zhicheng Ren, Renliang Sun, Haixin Wang, Guancheng Wan, Pan Lu, <b>Xiao Luo</b>, Yu Zhang, James Zou, Yizhou Sun, and Wei Wang. <br> <a href="">Protein Large Language Models: A Comprehensive Survey</a>. <br><em> In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</em></p></div></div>
         <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/Audio.jpg"></div><div class="pub-right"><p>Yusheng Zhao, <b>Xiao Luo</b>, Junyu Luo, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang. <br> <a href="">Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness</a>. <br><em> In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</em></p></div></div>
         <div class="pub" style="margin-top: 20px"><div class="pub-left"><img class="intro-img frame" src="image/SLOGAN.jpg"></div><div class="pub-right"><p>Junyu Luo, Yuhao Tang, Yiwei Fu, <b>Xiao Luo</b>, Zhizhuo Kou, Zhiping Xiao, Wei Ju, Wentao Zhang, and Ming Zhang. <br> <a href="">Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation</a>. <br><em> In International Conference on Machine Learning (ICML), 2025.</em></p></div></div>
