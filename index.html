@@ -1,642 +1,2181 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Xiao Luo </title>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Xiao Luo">
+  <meta name="description" content="Academic homepage of Xiao Luo, Assistant Professor at University of Wisconsin-Madison.">
+  <meta name="keywords" content="Xiao Luo, statistics, machine learning, LLMs, trustworthy AI, retrieval-augmented search, machine learning for graphs, dynamical systems, computational biology, healthcare">
+  <link rel="canonical" href="https://luoxiao12.github.io/">
+  <title>Xiao Luo | Statistics and Machine Learning</title>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Academic personal homepage of Xiao Luo, Assistant Professor at UW–Madison.">
-    <meta name="keywords" content="statistics, machine learning, deep learning, data mining, AI for science">
+  <!--
+    FIFTEENTH DRAFT
+    - Removes the standalone research introduction.
+    - Uses ampersands in all four research-area titles.
+    - Rewrites research descriptions without first-person pronouns.
+    - Pins the left profile column at a constant desktop position while scrolling.
+    - Preserves the icon set, Education & Training, and all 208 publications.
+  -->
 
-    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Xiao Luo",
+    "url": "https://luoxiao12.github.io/",
+    "jobTitle": "Assistant Professor",
+    "email": "mailto:xiao.luo@wisc.edu",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Wisconsin-Madison"
+    },
+    "sameAs": [
+      "https://scholar.google.com/citations?hl=en&user=yJgX8agAAAAJ&view_op=list_works&sortby=pubdate",
+      "https://github.com/luoxiao12",
+      "https://www.linkedin.com/in/xiao-luo-303548214/",
+      "https://twitter.com/XiaoLuo_12"
+    ]
+  }
+  </script>
 
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon-dark.png" type="image/png" />
-    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
-    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
+  <style>
+    :root {
+      /* Exact warm neutral sampled from the color image supplied by the user. */
+      --accent: #f2eee4;
+      --accent-border: #d8d1c3;
+      --accent-strong: #b8ae9d;
+      --canvas: #ffffff;
+      --surface: #ffffff;
+      --surface-soft: #f7f7f5;
+      --surface-mid: #f0f0ed;
+      --surface-deep: #e8e8e4;
+      --ink: #292b2d;
+      --muted: #5f6264;
+      --subtle: #777a7c;
+      --heading: #35383a;
+      --line: #cfcfcb;
+      --line-light: #e2e2df;
+      --link: #315f7d;
+      --max-width: 1250px;
+    }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    * {
+      box-sizing: border-box;
+    }
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 74px;
+    }
 
-    <style>
-      /* 页面整体宽度 */
-      body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        font-size: 15.5px;
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.15em;
+    }
+
+    a:hover {
+      color: var(--heading);
+    }
+
+    :focus-visible {
+      outline: 3px solid #8f9294;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -60px;
+      left: 18px;
+      z-index: 5000;
+      padding: 9px 13px;
+      color: var(--ink);
+      background: var(--surface);
+      border: 2px solid var(--accent-border);
+      font-weight: 700;
+      transition: top 150ms ease;
+    }
+
+    .skip-link:focus {
+      top: 10px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 4px solid var(--accent);
+      box-shadow: 0 2px 10px rgba(35, 36, 37, 0.055);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      width: min(var(--max-width), calc(100% - 36px));
+      min-height: 60px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+
+    .site-nav {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .site-nav a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 10px;
+      color: #3e4143;
+      border-radius: 4px;
+      font-size: 0.91rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: #1f2122;
+      background: var(--accent);
+    }
+
+    .site-nav a.active::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      bottom: 4px;
+      left: 10px;
+      height: 2px;
+      background: var(--accent-border);
+    }
+
+    .nav-toggle {
+      display: none;
+      margin-left: auto;
+      padding: 7px 10px;
+      color: #222426;
+      background: var(--accent);
+      border: 1px solid var(--accent-border);
+      border-radius: 4px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .page-shell {
+      width: min(var(--max-width), calc(100% - 36px));
+      margin: 0 auto;
+      padding: 38px 0 72px;
+      display: grid;
+      grid-template-columns: 286px minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .profile-column {
+      position: fixed;
+      top: 102px;
+      left: max(18px, calc((100vw - var(--max-width)) / 2));
+      width: 286px;
+      align-self: start;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line) transparent;
+      padding-right: 14px;
+      border-right: 1px solid var(--line);
+    }
+
+    .profile-block {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .portrait-wrap {
+      width: 182px;
+      height: 182px;
+      margin: 0 auto 12px;
+      overflow: hidden;
+      background: var(--surface-mid);
+      border: 2px solid var(--accent-border);
+      border-radius: 50%;
+    }
+
+    .portrait {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 34%;
+    }
+
+    .profile-name {
+      margin: 0 0 3px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.86rem;
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .profile-role {
+      margin: 0 0 5px;
+      color: var(--heading);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .profile-affiliation {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.42;
+      text-align: center;
+    }
+
+    .profile-affiliation a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .profile-affiliation a:hover {
+      color: var(--heading);
+      text-decoration: underline;
+    }
+
+    .keep-line,
+    .advisor-line {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .keep-line {
+      font-size: 0.80rem;
+      letter-spacing: -0.028em;
+    }
+
+    .advisor-line {
+      font-size: inherit;
+      letter-spacing: -0.034em;
+    }
+
+    .contact-list {
+      margin: 12px 0 0;
+      padding: 10px 0 0;
+      border-top: 1px solid var(--line-light);
+      display: grid;
+      justify-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.87rem;
+      text-align: center;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .contact-item a {
+      color: inherit;
+    }
+
+    .contact-symbol {
+      width: 14px;
+      height: 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      flex: 0 0 14px;
+    }
+
+    .contact-symbol svg {
+      width: 13px;
+      height: 14px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .profile-links {
+      min-height: 34px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .profile-icon-link {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #575b5e;
+      background: var(--accent);
+      border: 1px solid var(--accent-border);
+      border-radius: 50%;
+      text-decoration: none;
+      transition:
+        color 150ms ease,
+        background 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease;
+    }
+
+    .profile-icon-link:hover {
+      color: #1f2224;
+      background: var(--surface-mid);
+      border-color: var(--accent-strong);
+      transform: translateY(-1px);
+    }
+
+    .profile-icon-link svg {
+      width: 19px;
+      height: 19px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .profile-icon-link.scholar svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .side-section {
+      padding: 13px 0 0;
+    }
+
+    .side-heading {
+      margin: 0 0 11px;
+      padding: 7px 10px;
+      color: var(--heading);
+      background: var(--accent);
+      border: 1px solid var(--accent-border);
+      border-radius: 3px;
+      font-size: 0.78rem;
+      line-height: 1.25;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+    }
+
+    .background-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .background-list li {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.44;
+    }
+
+    .background-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .background-list strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.88rem;
+    }
+
+    .education-line {
+      white-space: nowrap;
+    }
+
+    .degree-inline {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .main-column {
+      min-width: 0;
+      grid-column: 2;
+    }
+
+    .content-section {
+      scroll-margin-top: 82px;
+    }
+
+    .content-section + .content-section {
+      margin-top: 36px;
+    }
+
+    .section-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      margin: 0;
+      color: var(--heading);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.72rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .section-action {
+      flex: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .simple-list {
+      margin: 0;
+      padding-left: 1.24rem;
+    }
+
+    .simple-list li {
+      margin-bottom: 8px;
+    }
+
+    .contact-note {
+      margin: 16px 0 0;
+      padding: 10px 13px;
+      background: var(--accent);
+      border-left: 4px solid var(--accent-border);
+      color: #4a4d4f;
+      font-size: 0.91rem;
+    }
+
+    .news-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news-list li {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .news-list li:first-child {
+      border-top: 1px solid var(--line-light);
+    }
+
+    .news-date {
+      color: var(--heading);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .news-text {
+      color: #44484a;
+      font-size: 0.94rem;
+    }
+
+    .plain-section-body {
+      color: #44484a;
+      font-size: 0.95rem;
+    }
+
+    .plain-section-body p {
+      margin: 0 0 12px;
+    }
+
+    .plain-section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-label {
+      color: #222426;
+    }
+
+
+    /* Research Interests is the only modular section. */
+    .research-modules {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .research-module {
+      min-width: 0;
+      padding: 15px 16px 14px;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--accent);
+      border-radius: 5px;
+      box-shadow: 0 4px 13px rgba(40, 41, 42, 0.035);
+    }
+
+    .research-module:nth-child(1) {
+      background: var(--surface);
+    }
+
+    .research-module:nth-child(2) {
+      background: var(--surface-soft);
+    }
+
+    .research-module:nth-child(3) {
+      background: var(--surface-mid);
+    }
+
+    .research-module:nth-child(4) {
+      background: var(--surface-deep);
+    }
+
+    .module-label {
+      display: inline-block;
+      margin: 0 0 8px;
+      padding: 3px 7px;
+      color: #55585a;
+      background: var(--accent);
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      font-size: 0.70rem;
+      font-weight: 800;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    .research-module h3 {
+      margin: 0 0 7px;
+      color: #252729;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .research-module h3 a {
+      color: inherit;
+      text-decoration-color: #aaa7a0;
+    }
+
+    .research-module p {
+      margin: 0;
+      color: #55595b;
+      font-size: 0.88rem;
+      line-height: 1.52;
+    }
+
+    .module-tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .module-tags span {
+      padding: 2px 6px;
+      color: #44484a;
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid #c8c4bc;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    /* Plain, year-grouped bibliography. */
+    .publication-note {
+      margin: 0 0 13px;
+      color: #686b6d;
+      font-size: 0.84rem;
+    }
+
+    .equal-contrib {
+      color: var(--heading);
+      font-weight: 800;
+      line-height: 0;
+    }
+
+    .publication-year {
+      scroll-margin-top: 128px;
+    }
+
+    .publication-year + .publication-year {
+      margin-top: 31px;
+    }
+
+    .publication-year h3 {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      margin: 0 0 8px;
+      padding-bottom: 4px;
+      color: var(--heading);
+      border-bottom: 1px solid var(--line);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.18rem;
+      line-height: 1.25;
+    }
+
+    .publication-list {
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .publication-list li {
+      margin: 0 0 10px;
+      padding-left: 2px;
+      color: #44484a;
+      font-size: 0.89rem;
+      line-height: 1.48;
+    }
+
+    .publication-list li::marker {
+      color: #717578;
+    }
+
+    .publication-list strong.author-self {
+      color: #222426;
+    }
+
+    .paper-title {
+      color: var(--link);
+      font-weight: 400;
+    }
+
+    a.paper-title:hover {
+      color: #202224;
+    }
+
+    span.paper-title {
+      color: #343739;
+    }
+
+    .venue {
+      color: #55595b;
+      font-style: italic;
+    }
+
+    .site-footer {
+      width: min(var(--max-width), calc(100% - 36px));
+      margin: -35px auto 0;
+      padding: 0 0 30px;
+      color: var(--subtle);
+      text-align: right;
+      font-size: 0.79rem;
+    }
+
+    @media (max-width: 1080px) {
+      .site-nav a {
+        padding-right: 7px;
+        padding-left: 7px;
+        font-size: 0.84rem;
       }
-      .wrapper {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 20px;
+
+      .page-shell {
+        grid-template-columns: 276px minmax(0, 1fr);
+        gap: 24px;
       }
-      section {
-        line-height: 1.6;
-        margin-bottom: 50px;
+
+      .profile-column {
+        width: 276px;
+        padding-right: 12px;
       }
-      #about-me {
-        position: relative;
-        padding-top: 5px;
-        margin-top: 0px;
+
+      .portrait-wrap {
+        width: 174px;
+        height: 174px;
       }
-      #about-me::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: calc(-50vw + 50%);
-        width: 100vw;
-        height: 1px;
-        background-color: #eee;
+
+      .profile-affiliation {
+        font-size: 0.80rem;
       }
-      h2 {
-        margin-bottom: 25px;
-        margin-top: 40px;
+
+      .keep-line {
+        font-size: 0.76rem;
       }
-      #about-me h2 {
-        margin-bottom: 5px;
-        margin-top: 20px;
+
+      .advisor-line {
+        font-size: inherit;
+        letter-spacing: -0.040em;
       }
-      #about-me {
-        margin-bottom: 10px;
+    }
+
+    @media (max-width: 860px) {
+      html {
+        scroll-padding-top: 66px;
       }
-      #news {
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-      #news h2 {
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
-      h2:first-child {
-        margin-top: 20px;
-      }
-      /* 头像 + 简介并排 */
-      .about-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        margin-bottom: 0px;
-        padding: 5px 0;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .avatar-container {
-        flex-shrink: 0;
-      }
-      .profile-photo, .circle-img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
-      .circle-img {
-        border-radius: 50%;
-      }
-      .border-dark {
-        border: 3px solid #333;
-      }
-      .about-text {
-        flex: 1;
-        text-align: left;
-      }
-      .name-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin: 0 0 5px 0;
-        color: #333;
-        font-family: 'Times New Roman', serif;
-      }
-      .position-title {
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin: 0 0 15px 0;
-        color: #333;
-      }
-      .affiliation {
-        margin-bottom: 8px;
-        line-height: 1.2;
-      }
-      .dept-link, .univ-link {
-        color: #0066cc;
-        text-decoration: underline;
-        font-size: 1.1rem;
-        line-height: 1.4;
-      }
-      .dept-link:hover, .univ-link:hover {
-        color: #004499;
-      }
-      .contact-info {
-        margin-bottom: 8px;
-      }
-      .contact-item {
-        font-size: 1.1rem;
-        color: #555;
-        margin-bottom: 5px;
-        font-family: Arial, sans-serif;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .contact-item i {
-        color: #666;
-        width: 16px;
-        text-align: center;
-      }
-      .social-media {
-        display: flex;
-        gap: 15px;
-        margin-top: 5px;
-        margin-bottom: 0px;
-        margin-left: 0px;
-      }
-      .social-link, .icon-button {
-        color: #666;
-        font-size: 1.5rem;
-        transition: color 0.3s ease;
-        text-decoration: none;
-        display: inline-block;
-        margin: 0 5px;
-      }
-      .social-link:hover, .icon-button:hover {
-        color: #0066cc;
-      }
-      .icon-button {
-        text-decoration: none !important;
-        display: inline-block !important;
-        color: #666 !important;
-        transition: all 0.3s ease;
-        padding: 8px;
-        border-radius: 4px;
-        position: relative;
-        overflow: hidden;
-      }
-      .icon-button:hover {
-        color: #0066cc !important;
-        transform: translateY(-2px);
-        background-color: #f0f0f0;
-      }
-      .icon-button:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: left 0.5s;
-      }
-      .icon-button:hover:before {
-        left: 100%;
-      }
-      .icon-button i {
-        display: inline-block;
-        font-size: 1.5rem;
-        width: 1.5rem;
-        height: 1.5rem;
-        line-height: 1.5rem;
-        text-align: center;
-        transition: all 0.3s ease;
-        position: relative;
-        z-index: 1;
-      }
-      .icon-button:hover i {
-        transform: scale(1.1);
-        animation: pulse 0.6s ease-in-out;
-      }
-      @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1.1); }
-      }
-      /* 列表缩进样式 */
-      ul {
-        padding-left: 20px;
-      }
-      li {
-        margin-bottom: 8px;
-        line-height: 1.5;
-      }
-      /* 出版物布局样式 */
-      .pub {
-        display: flex;
-        align-items: stretch;
-        gap: 20px;
-        margin-bottom: 30px;
-        padding: 20px;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        background-color: #fafafa;
-        width: 100%;
-      }
-      .pub-left {
-        width: 45%;
-        flex-shrink: 0;
-      }
-      .intro-img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border: 2px solid #8B4513;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        background-color: #fff;
-      }
-      .pub-right {
-        flex: 1;
-        padding-left: 0;
-      }
-      .pub-right p {
-        margin: 0;
-        line-height: 1.6;
-      }
-      .pub-title {
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #333;
-      }
-      .pub-authors {
-        color: #0066cc;
-        margin-bottom: 8px;
-        font-size: 0.95rem;
-      }
-      .pub-links {
-        color: #8B4513;
-        margin-bottom: 8px;
-        font-weight: 500;
-      }
-      .pub-venue {
-        color: #333;
-        font-style: italic;
-        margin-bottom: 5px;
-        font-size: 0.95rem;
-      }
-      .pub- {
-        color: #cc0000;
-        font-weight: bold;
-      }
-      /* 导航菜单样式 */
-      .site-nav {
-        margin: 5px 0 10px 0;
-        padding: 5px 0;
-        border-bottom: 1px solid #eee;
-        position: relative;
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-      }
-      .menu-icon {
-        display: none;
-        float: right;
-        width: 36px;
-        height: 26px;
-        line-height: 0;
-        padding-top: 10px;
-        text-align: center;
-      }
-      .menu-icon svg {
-        width: 18px;
-        height: 15px;
-      }
-      .trigger {
-        clear: both;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
+
+      .topbar-inner {
+        width: min(100% - 26px, var(--max-width));
+        min-height: 56px;
         flex-wrap: wrap;
       }
-      .page-link {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        padding: 8px 16px;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-      }
-      .page-link:hover {
-        background-color: #f0f0f0;
-        color: #007acc;
-      }
-      @media screen and (max-width: 600px) {
-        .menu-icon {
-          display: block;
-        }
-        .trigger {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <nav class="site-nav">
-        <a href="#" class="menu-icon">
-          <svg viewBox="0 0 18 15">
-            <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-            <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-            <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-          </svg>
-        </a>
 
-        <div class="trigger">
-          <a class="page-link" href="#about-me"><b>Biography</b></a>
-          <a class="page-link" href="#news"><b>News</b></a>
-          <a class="page-link" href="#publications"><b>Publications</b></a>
-          <a class="page-link" href="#honors"><b>Honors & Awards</b></a>
-          <a class="page-link" href="#teaching"><b>Teaching </b></a>
-          <a class="page-link" href="#services"><b>Academic Services</b></a>
-        </div>
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .site-nav {
+        width: 100%;
+        margin: 0;
+        padding: 0 0 9px;
+        display: none;
+        flex-wrap: wrap;
+      }
+
+      body.nav-open .site-nav {
+        display: flex;
+      }
+
+      .site-nav a {
+        min-height: 35px;
+      }
+
+      .page-shell {
+        width: min(100% - 26px, var(--max-width));
+        padding-top: 25px;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .profile-column {
+        position: static;
+        width: auto;
+        max-height: none;
+        overflow: visible;
+        padding: 0 0 28px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .main-column {
+        grid-column: 1;
+      }
+
+      .profile-block {
+        display: grid;
+        grid-template-columns: 180px minmax(0, 1fr);
+        column-gap: 24px;
+        align-items: start;
+        padding-bottom: 18px;
+      }
+
+      .portrait-wrap {
+        grid-row: 1 / span 6;
+        width: 180px;
+        height: 180px;
+        margin: 0;
+      }
+
+      .profile-name,
+      .profile-role,
+      .profile-affiliation,
+      .profile-links {
+        text-align: left;
+      }
+
+      .profile-links {
+        justify-content: flex-start;
+      }
+
+      .keep-line,
+      .advisor-line {
+        white-space: normal;
+        font-size: inherit;
+        letter-spacing: normal;
+      }
+
+      .contact-list {
+        margin-top: 12px;
+      }
+
+      .profile-links {
+        margin-top: 10px;
+      }
+
+      .side-section {
+        display: block;
+        width: 100%;
+      }
+
+      .site-footer {
+        width: min(100% - 26px, var(--max-width));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .research-modules {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        font-size: 15px;
+      }
+
+
+      .profile-block {
+        display: block;
+      }
+
+      .portrait-wrap {
+        width: 185px;
+        height: 185px;
+        margin: 0 auto 15px;
+      }
+
+      .profile-name,
+      .profile-role,
+      .profile-affiliation {
+        text-align: center;
+      }
+
+      .profile-links {
+        justify-content: center;
+      }
+
+      .side-section {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .section-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .section-heading {
+        font-size: 1.5rem;
+      }
+
+      .news-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .publication-list {
+        padding-left: 1.15rem;
+      }
+
+      .publication-list li {
+        font-size: 0.9rem;
+      }
+
+      .site-footer {
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .skip-link,
+      .nav-toggle {
+        display: none !important;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .page-shell {
+        width: 100%;
+        padding: 0;
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 28px;
+      }
+
+      .profile-column {
+        position: static;
+        width: auto;
+        max-height: none;
+        overflow: visible;
+      }
+
+      .main-column {
+        grid-column: 2;
+      }
+    }
+  </style>
+
+  
+</head>
+
+<body>
+  
+
+  
+
+  
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+      <nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+        <a href="#research">Research Interests</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#awards">Awards</a>
+        <a href="#service">Service</a>
       </nav>
+    </div>
+  </header>
 
-      <header>
-        <div class="about-container">
-          <!-- 左边头像 -->
-          <div class="avatar-container">
-            <img id="profile-avatar" src="images/me3.png" alt="Me" class="circle-img border-dark" />
-          </div>
-          
-          <!-- 右边文字介绍 -->
-          <div class="about-text">
-            <h1 class="name-title">Xiao Luo</h1>
-            <div class="affiliation">
-              <a href="https://stat.wisc.edu/" class="dept-link">Department of Statistics, College of Computing & Artificial Intelligence</a><br>
-              <a href="https://www.wisc.edu/" class="univ-link">University of Wisconsin–Madison</a>
-            </div>
-            <div class="contact-info">
-              <div class="contact-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <span>6667 Morgridge Hall</span>
-              </div>
-              <div class="contact-item">
-                <i class="fa fa-envelope"></i>
-                <span>xiao.luo@wisc.edu</span>
-              </div>
-            </div>
-
-            <div class="social-media">
-              <a href="https://scholar.google.com/citations?hl=en&user=yJgX8agAAAAJ&view_op=list_works&sortby=pubdate" class="icon-button" target="_blank">
-                <i class="ai ai-google-scholar-square icon-github"></i>
-              </a>
-
-              <a href="https://github.com/luoxiao12" class="icon-button github" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-
-              <a href="https://www.linkedin.com/in/xiao-luo-303548214/" class="icon-button linkedin" target="_blank">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              
-              <a href="https://twitter.com/XiaoLuo_12" class="icon-button twitter" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
+  <div id="top" class="page-shell">
+    <aside class="profile-column" aria-label="Profile and academic background">
+      <section class="profile-block">
+        <div class="portrait-wrap">
+          <img class="portrait" src="images/me3.png" alt="Portrait of Xiao Luo" width="768" height="1000">
         </div>
-      </header>
 
-      <section>
-        <!-- About Me 放在最上面 -->
-        <h2 id="about-me">About Me</h2>
-        <p>
-          I'm an Assistant Professor in the Department of Statistics, University of Wisconsin–Madison. 
-          Previously, I was a postdoctoral researcher in the Department of Computer Science, UCLA, 
-          under the supervision of Prof. <a href="http://web.cs.ucla.edu/~yzsun/">Yizhou Sun</a> and 
-          Prof. <a href="https://web.cs.ucla.edu/~weiwang/">Wei Wang</a>. 
-          I completed my Ph.D. at <a href="https://english.pku.edu.cn/">Peking University (PKU)</a> 
-          under the supervision of Prof. 
-          <a href="https://www.oir.pku.edu.cn/cqben/info/1002/1770.htm">Minghua Deng</a>. 
-          I also work closely with Prof. <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a> 
-          and Prof. <a href="https://medicine.yale.edu/profile/xiting-yan/">Xiting Yan</a>. I'm a machine learning researcher. Recently, I've been focused on <a href="https://aclanthology.org/2025.acl-long.1493.pdf" target="_blank" style="color: #0066cc; text-decoration: none;">LLM Post-training</a>, <a href="https://arxiv.org/pdf/2503.21460" target="_blank" style="color: #0066cc; text-decoration: none;">LLM (Agent) Applications</a>, and <a href="https://www.sciencedirect.com/science/article/abs/pii/S089360802400131X" target="_blank" style="color: #0066cc; text-decoration: none;">Machine Learning for Graphs</a> and Dynamical Systems.
-          </p>
-
-        <p>
-          If you are interested in my research or would like to work with me (including onsite/remote internship/collaboration), please feel free to <a href="mailto:xiao.luo@wisc.edu" style="color: #0066cc; text-decoration: underline;">email me</a>!
+        <h1 class="profile-name">Xiao Luo</h1>
+        <p class="profile-role">Assistant Professor</p>
+        <p class="profile-affiliation">
+          <a href="https://stat.wisc.edu/" target="_blank" rel="noopener noreferrer">Department of Statistics</a><br>
+          <span class="keep-line">College of Computing &amp; Artificial Intelligence</span><br>
+          <a href="https://www.wisc.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin-Madison</a>
         </p>
 
-        <h2 id="news">News</h2>
-        <ul>
-          <li><strong>Feb 2026:</strong> Invited as an Area Chair for KDD 2026.</li>
-          <li><strong>Dec 2025:</strong> Invited as an Area Chair for ACL ARR 2026 Jan.</li>
-          <li><strong>Nov 2025:</strong> Received the Distinguished Area Chair Certificate from ECML PKDD 2025.</li>
-        </ul>
-
-        <!-- 其他部分保持不变，这里省略 News/Publications/Services -->
-        <h2 id="publications">Selected Publications (Full list: <a href="https://scholar.google.com/citations?user=yJgX8agAAAAJ" target="_blank" style="color: #0066cc; text-decoration: underline;">Google Scholar</a>)</h2>
-        
-
-        <!-- <div class="pub"> -->
-          <!-- <div class="pub-left">
-            <img class="intro-img" src="image/Protein.jpg" alt="Protein LLM Survey">
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="contact-symbol" aria-hidden="true">
+              <svg viewBox="0 0 384 512" role="img"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg>
+            </span>
+            <span>6667 Morgridge Hall</span>
           </div>
-          <div class="pub-right">
-            <div class="pub-title">Protein Large Language Models: A Comprehensive Survey</div>
-            <div class="pub-authors">Yijia Xiao, Wanjia Zhao, Junkai Zhang, Yiqiao Jin, Han Zhang, Zhicheng Ren, Renliang Sun, Haixin Wang, Guancheng Wan, Pan Lu, <b>Xiao Luo</b>, Yu Zhang, James Zou, Yizhou Sun, and Wei Wang</div>
-            <div class="pub-venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/Audio.jpg" alt="Audio-Visual MLLM Evaluation">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness</div>
-            <div class="pub-authors">Yusheng Zhao, <b>Xiao Luo</b>, Junyu Luo, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang</div>
-            <div class="pub-venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025</div>
-          </div>
-        </div> -->
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/CONST.jpg" alt="Sparse Causal Discovery">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Sample Lottery: Unsupervised Discovery of Critical Instances for LLM Reasoning</div>
-            <div class="pub-authors">Zhiping Xiao, Yusheng Zhao, Qixin Zhang, Jiaye Xie, Wanjia Zhao, Weizhi Zhang, <b>Xiao Luo</b>, Philip S. Yu, and Ming Zhang</div>
-            <div class="pub-venue">In International Conference on Learning Representations (ICLR), 2026</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/SE-Diff.jpg" alt="Sparse Causal Discovery">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">SE-Diff: Simulator and Experience Enhanced Diffusion Model for Comprehensive ECG Generation</div>
-            <div class="pub-authors">Xiaoda Wang, Kaiqiao Han, Yuhao Xu, <b>Xiao Luo</b>, Yizhou Sun, Wei Wang, and Carl Yang</div>
-            <div class="pub-venue">In International Conference on Learning Representations (ICLR), 2026</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/DAG.jpg" alt="Sparse Causal Discovery">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning</div>
-            <div class="pub-authors">Wanjia Zhao, Qinwei Ma, Jingzhe Shi, Shirley Wu, Jiaqi Han, Yijia Xiao, Si-Yuan Chen, <b>Xiao Luo</b>, Ludwig Schmidt, and James Zou</div>
-            <div class="pub-venue">In International Conference on Learning Representations (ICLR), 2026</div>
-          </div>
-        </div>
-      <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/PRISM.jpg" alt="Sparse Causal Discovery">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">PRISM: Partial-label Relational Inference with Spatial and Spectral Cues</div>
-            <div class="pub-authors">Yiyang Gu, Wenrui Wu, Yifang Qin, Taian Guo, Tao Zhe, Jiaru Tang, Zhiping Xiao, Weizhi Zhang, Ziyue Qiao, Wei Ju, Dongjie Wang, <b>Xiao Luo</b>, Philip S. Yu, and Ming Zhang</div>
-            <div class="pub-venue">In International Conference on Learning Representations (ICLR), 2026</div>
-          </div>
-        </div>
-        
-      <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/OGMM.png" alt="Sparse Causal Discovery">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Out-of-Distribution Graph Models Merging</div>
-            <div class="pub-authors">Yidi Wang, Ziyue Qiao, Jiawei Gu, Xubin Zheng, Pengyang Wang, Xiaobing Pei, and <b>Xiao Luo</b></div>
-            <div class="pub-venue">In International Conference on Learning Representations (ICLR), 2026</div>
-          </div>
-        </div>
-          <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/DENSE.jpg" alt="Sparse Causal Discovery">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Dynamic Text Bundling Supervision for Zero-Shot Inference on Text-Attributed Graphs</div>
-            <div class="pub-authors">Yusheng Zhao, Qixin Zhang, <b>Xiao Luo</b>, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang</div>
-            <div class="pub-venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025</div>
-          </div>
-        </div>
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/SLOGAN.jpg" alt="Sparse Causal Discovery">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation</div>
-            <div class="pub-authors">Junyu Luo, Yuhao Tang, Yiwei Fu, <b>Xiao Luo</b>, Zhizhuo Kou, Zhiping Xiao, Wei Ju, Wentao Zhang, and Ming Zhang</div>
-            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
+          <div class="contact-item">
+            <span class="contact-symbol" aria-hidden="true">
+              <svg viewBox="0 0 512 512" role="img"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path></svg>
+            </span>
+            <a href="mailto:xiao.luo@wisc.edu">xiao.luo@wisc.edu</a>
           </div>
         </div>
 
+        <div class="profile-links" aria-label="Professional profiles">
+          <a class="profile-icon-link scholar" href="https://scholar.google.com/citations?hl=en&amp;user=yJgX8agAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
+            <svg viewBox="0 0 448 448" role="img" aria-hidden="true"><path d="M48 0H400Q420 0 434.0 14.0Q448 28 448 48V400Q448 420 434.0 434.0Q420 448 400 448H48Q28 448 14.0 434.0Q0 420 0 400V48Q0 28 14.0 14.0Q28 0 48 0ZM189 64 81 158H152Q152 160 152 163Q152 189 170.0 206.0Q188 223 215 223Q221 223 227 222Q223 230 223 237Q223 250 234 264Q185 267 162 281Q149 290 141.0 302.0Q133 314 133 329Q133 341 138.5 350.5Q144 360 152.0 366.0Q160 372 171.0 376.5Q182 381 193.0 382.5Q204 384 214 384Q231 384 248.0 379.5Q265 375 280.0 366.5Q295 358 304.0 343.5Q313 329 313 311Q313 297 307.5 285.5Q302 274 294 267Q286 260 278 254Q270 248 264.0 241.5Q258 235 258.0 229.0Q258 223 262.5 217.0Q267 211 273.0 206.0Q279 201 285.5 194.5Q292 188 296.5 177.5Q301 167 301 154Q301 138 294 127Q294 126 293.5 125.5Q293 125 293 124L340 85V100Q335 100 335 108V216Q335 225 344 225H347Q356 225 356 216V108Q356 100 350 100V77L367 64ZM220 102Q235 102 246.5 115.0Q258 128 262.5 143.5Q267 159 267 173Q267 190 258.0 201.0Q249 212 232 212Q218 212 206.5 200.0Q195 188 190.0 173.0Q185 158 185 144Q185 126 194.0 114.0Q203 102 220 102ZM239 274Q244 274 247 275Q248 275 254.0 279.5Q260 284 261.0 285.0Q262 286 267.5 290.0Q273 294 274 296Q277 299 280 302Q283 307 284 310Q286 314 287 317Q288 322 288 326Q288 347 271.5 357.5Q255 368 233 368Q221 368 210 365Q199 362 189.0 357.0Q179 352 173.0 342.5Q167 333 167 320Q167 307 174.0 297.5Q181 288 192.0 283.5Q203 279 215.0 276.5Q227 274 239 274Z"></path></svg>
+            <span class="visually-hidden">Google Scholar</span>
+          </a>
 
-        
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/GREAT.png" alt="GraphODE Generalization">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Rethink GraphODE Generalization within Coupled Dynamical System</div>
-            <div class="pub-authors">Guancheng Wan, Zijie Huang, Wanjia Zhao, <b>Xiao Luo</b>, Yizhou Sun, and Wei Wang</div>
-            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/Fair.jpg" alt="DANCE Graph Fairness">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">DANCE: Dual Unbiased Expansion with Group-acquired Alignment for Out-of-distribution Graph Fairness Learning</div>
-            <div class="pub-authors">Yifan Wang, Hourun Li, Ling Yue, Zhiping Xiao, Jia Yang, Changling Zhou, Wei Ju, Ming Zhang, and <b>Xiao Luo</b></div>
-            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/GACL.png" alt="GCAL Domain Adaptation">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">GCAL: Adapting Graph Models to Evolving Domain Shifts</div>
-            <div class="pub-authors">Ziyue Qiao, Qianyi Cai, Hao Dong, Jiawei Gu, Pengyang Wang, Meng Xiao, <b>Xiao Luo</b>, and Hui Xiong</div>
-            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/ACCESS.jpg" alt="Test-time Adaptation on Graphs">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Test-time Adaptation on Graphs via Adaptive Subgraph-based Selection and Regularized Prototypes</div>
-            <div class="pub-authors">Yusheng Zhao, Qixin Zhang, <b>Xiao Luo</b>, Junyu Luo, Wei Ju, Zhiping Xiao, and Ming Zhang</div>
-            <div class="pub-venue">In International Conference on Machine Learning (ICML), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/Fin.jpg" alt="FinMME Dataset">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">FinMME: A Financial Multi-Modal Evaluation Dataset</div>
-            <div class="pub-authors">Junyu Luo, Zhizhuo Kou, Liming Yang, <b>Xiao Luo</b>, Jinsheng Huang, Zhiping Xiao, Jingshu Peng, Chengzhong Liu, Jiaming Ji, Xuanzhe Liu, Sirui Han, Ming Zhang, and Yike Guo</div>
-            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/Traffic.jpg" alt="Traffic Flow Forecasting">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">Embracing Large Language Models in Traffic Flow Forecasting</div>
-            <div class="pub-authors">Yusheng Zhao, <b>Xiao Luo</b>, Haomin Wen, Zhiping Xiao, Wei Ju, Ming Zhang</div>
-            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/scRAG.jpg" alt="scRAG Single-Cell Annotation">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">scRAG: Hybrid Retrieval-Augmented Generation for LLM-based Cross-Tissue Single-Cell Annotation</div>
-            <div class="pub-authors">Zhiyin Yu, Chao Zheng, Chong Chen, Xian-Sheng Hua, and <b>Xiao Luo</b></div>
-            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025</div>
-          </div>
-        </div>
-        <div class="pub">
-          <div class="pub-left">
-            <img class="intro-img" src="image/MARK.jpg" alt="MARK Graph Clustering">
-          </div>
-          <div class="pub-right">
-            <div class="pub-title">MARK: Multi-agent Collaboration with Ranking Guidance for Text-attributed Graph Clustering</div>
-            <div class="pub-authors">Yiwei Fu, Yuxing Zhang, Chunchun Chen, Jianwen Ma, Quan Yuan, Rong-Cheng Tu, Xinli Huang, Wei Ye, <b>Xiao Luo</b>, and Minghua Deng</div>
-            <div class="pub-venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025</div>
-          </div>
-        </div>  
-       <h2 id="teaching">Teaching</h2>
-        <ul>
-          <li>Fall 2026, STAT 451: Introduction to Machine Learning and Statistical Pattern Classification  </li>
-          <li>Spring 2026, STAT 601: Statistical Methods I </li>
-        </ul>
-        <h2 id="awards">Selected Awards and Honors</h2>
-        <ul>
-          <li>Chancellor's Award for Postdoctoral Research, UCLA</li>
-          <li>NeurIPS 2023 Workshop DLDE, Best Paper Award</li>
-          <li>Institute for Digital Research and Education Postdoctoral Fellowship, UCLA</li>
-          <li>CIKM 2025 Best Paper Candidate </li>
-        </ul>
+          <a class="profile-icon-link" href="https://github.com/luoxiao12" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 496 512" role="img" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+            <span class="visually-hidden">GitHub</span>
+          </a>
 
-        <h2 id="services">Selected Academic Services</h2>
-        <p><strong>Associate Editor/Editorial Board Member:</strong> BMC Bioinformatics (2023 - ), Pattern Recognition (2025 - ), IEEE Journal of Biomedical and Health Informatics (2025 - ), Transactions on Machine Learning Research (2025 - ), IEEE Transactions on Emerging Topics in Computational Intelligence (2025 - ), IEEE Transactions on Circuits and Systems for Video Technology (2025 - ).</p>
-        
-        <p><strong>Area Chair:</strong> ACM MM 2024, ICML 2025, ACL ARR, ACM MM 2025, ECML-PKDD 2025, NeurIPS 2025, ICLR 2026, CVPR 2026, ICML 2026, ECML-PKDD 2026, KDD 2026, KDD 2026 AI4Science Track</p>
-        
-        <p><strong>Senior PC Member:</strong> IJCAI 2025, CIKM 2025, AAAI 2026, IJCAI 2026</p>
+          <a class="profile-icon-link" href="https://www.linkedin.com/in/xiao-luo-303548214/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 448 512" role="img" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
 
-        <p><strong>Distinguished Area Chair Certificate from ECML-PKDD 2025</p> 
+          <a class="profile-icon-link" href="https://twitter.com/XiaoLuo_12" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+            <svg viewBox="0 0 512 512" role="img" aria-hidden="true"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+            <span class="visually-hidden">Twitter</span>
+          </a>
+        </div>
       </section>
 
-      <div style="border-top: 1px solid #eee; width: 100vw; margin-left: calc(-50vw + 50%); margin-top: 40px;"></div>
-      <div class="disable-links" style="text-align: center; margin: 40px 0;">
-        <table style="width:40%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tbody><tr>
-            <td style="width:100%; vertical-align:middle; text-align:center;"><a href="http://luoxiao12.github.io"  title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=b5c0d0&w=a&t=n&d=K913JBzmBzdxhOytHjK18m_ifvQjxzqIpO3hzZgUa8c&co=f5e8dd&ct=000000" style="width: 100%; height: auto;"></a> </td>
-          </tr></tbody>
-        </table>
-      </div>
+      <section class="side-section" aria-labelledby="background-heading">
+        <h2 id="background-heading" class="side-heading">Education &amp; Training</h2>
+        <!-- Add degree years or another education/experience entry directly in this list when ready. -->
+        <ul class="background-list">
+          <li class="">
+            <strong>University of California, Los Angeles</strong>
+            Postdoctoral Researcher<br>
+            <span class="advisor-line">Advisors: <a href="http://web.cs.ucla.edu/~yzsun/" target="_blank" rel="noopener noreferrer">Prof. Yizhou Sun</a> and <a href="https://web.cs.ucla.edu/~weiwang/" target="_blank" rel="noopener noreferrer">Prof. Wei Wang</a></span>
+          </li>
+          <li>
+            <strong class="education-line">Peking University<span class="degree-inline">, Ph.D.</span></strong>
+            <span class="advisor-line">Advisor: <a href="https://www.oir.pku.edu.cn/cqben/info/1002/1770.htm" target="_blank" rel="noopener noreferrer">Prof. Minghua Deng</a></span>
+          </li>
+          <li>
+            <strong class="education-line">Nanjing University<span class="degree-inline">, B.S.</span></strong>
+          </li>
+        </ul>
+      </section>
+    </aside>
 
-      <footer></footer>
-    </div>
-  </body>
-</html>
+    <main id="main-content" class="main-column">
+      <section id="research" class="content-section">
+        <div class="section-heading-row">
+          <h2 class="section-heading">Research Interests</h2>
+        </div>
+
+
+        <div class="research-modules">
+          <article class="research-module">
+            <p class="module-label">FOUNDATION Models</p>
+            <h3>LLM Reasoning &amp; Post-training</h3>
+            <p>Data-efficient post-training, reinforcement learning, and uncertainty quantification for more capable and reliable LLM reasoning.</p>
+            <div class="module-tags"><span>Post-training</span><span>Reasoning</span><span>Reinforcement learning</span></div>
+          </article>
+
+          <article class="research-module">
+            <p class="module-label">AgentIC AI</p>
+            <h3>LLM Agents &amp; RAG</h3>
+            <p>LLM agents, retrieval, memory, and tool use for building reliable and grounded systems for real-world applications.</p>
+            <div class="module-tags"><span>LLM agents</span><span>RAG</span><span>Agent memory</span></div>
+          </article>
+
+          <article class="research-module">
+            <p class="module-label">Graph Machine Learning</p>
+            <h3>Machine Learning for Graphs &amp; Dynamical Systems</h3>
+            <p>Machine learning for graph-structured data and dynamical systems to solve real-world problems.</p>
+            <div class="module-tags"><span>Graph learning</span><span>Dynamical systems</span><span>Trustworthy AI</span></div>
+          </article>
+
+          <article class="research-module">
+            <p class="module-label">AI for Science</p>
+            <h3>AI for Computational Biology &amp; Healthcare</h3>
+            <p>AI-driven methods for genomics, molecules, biomedical and healthcare applications.</p>
+            <div class="module-tags"><span>Bioinformatics</span><span>Genomics</span><span>Healthcare</span></div>
+          </article>
+        </div>
+
+        <p class="contact-note">
+          If you are interested in my research or would like to work with me
+          (including onsite/remote internship/collaboration), please feel free to
+          <a href="mailto:xiao.luo@wisc.edu">email me</a>!
+        </p>
+      </section>
+
+      <section id="news" class="content-section">
+        <div class="section-heading-row">
+          <h2 class="section-heading">News</h2>
+        </div>
+        <ul class="news-list">
+          <li class="">
+            <time class="news-date" datetime="2026-02">Feb 2026</time>
+            <span class="news-text">Invited as an Area Chair for KDD 2026.</span>
+          </li>
+          <li>
+            <time class="news-date" datetime="2025-12">Dec 2025</time>
+            <span class="news-text">Invited as an Area Chair for ACL ARR 2026 January.</span>
+          </li>
+          <li>
+            <time class="news-date" datetime="2025-11">Nov 2025</time>
+            <span class="news-text">Received the Distinguished Area Chair Certificate from ECML-PKDD 2025.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="publications" class="content-section">
+        <div class="section-heading-row">
+          <h2 class="section-heading">Selected Publications</h2>
+        </div>
+
+        <p class="publication-note"><sup class="equal-contrib">*</sup> Co-first authors (equal contribution). Publications within each year are grouped alphabetically by venue.</p>
+
+
+        <section id="publications-2026" class="publication-year">
+          <h3>2026</h3>
+          <ul class="publication-list">
+            <li>
+              <span class="publication-authors">Fang Sun, Zijie Huang, Yadi Cao, <strong class="author-self">Xiao Luo</strong>, Wei Wang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/epdf/10.1145/3822365" target="_blank" rel="noopener noreferrer">DoMiNO: Decomposing Molecular Dynamics with Multi-Scale Neural Graph Ordinary Differential Equations</a>,”
+              <span class="venue">ACM Transactions on Knowledge Discovery from Data (TKDD), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haixin Wang, Ruoyan Li, Fred Xu, Fang Sun, Kaiqiao Han, Zijie Huang, Ching Chang, <strong class="author-self">Xiao Luo</strong>, Wei Wang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3770855.3817497" target="_blank" rel="noopener noreferrer">FD-Bench: A Modular and Fair Benchmark for Data-driven Fluid Simulation</a>,”
+              <span class="venue">In ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), AI for Sciences Track, Datasets and Benchmarks Track, 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Ziqing Wang, Yibo Wen, William Pattie, <strong class="author-self">Xiao Luo</strong>, Weimin Wu, Jerry Yao-Chieh Hu, Abhishek Pandey, Han Liu, and Kaize Ding</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3770855.3819016" target="_blank" rel="noopener noreferrer">POLO: Preference-Guided Multi-Turn Reinforcement Learning for Sample-Efficient Lead Optimization</a>,”
+              <span class="venue">In ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), AI for Sciences Track, 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Chenyi Tong, Jingru Gan, Yanqiao Zhu, Kaiqiao Han, Haixin Wang, Yizhou Sun, Wei Wang and <strong class="author-self">Xiao Luo</strong></span>,
+              “<span class="paper-title">CrystalSTAR: Structured Action Orchestration with Trio-Reflection for Constrained Novel Crystal Discovery</span>,”
+              <span class="venue">In The Conference on Language Modeling (COLM), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tianyu Liu, Yijia Xiao, <strong class="author-self">Xiao Luo</strong>, and Hongyu Zhao</span>,
+              “<span class="paper-title">RobustCell: A Model Attack-Defense Framework</span>,”
+              <span class="venue">npj Systems Biology and Applications, 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tianyu Liu, Tianqi Chen, Wangjie Zheng, <strong class="author-self">Xiao Luo</strong>, Yiqun Chen, and Hongyu Zhao</span>,
+              “<a class="paper-title" href="https://www.sciencedirect.com/science/article/pii/S266638992500279X?via%3Dihub" target="_blank" rel="noopener noreferrer">Embeddings from language models are good learners for single-cell data analysis</a>,”
+              <span class="venue">Patterns, 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyou Su, He Zhu, <strong class="author-self">Xiao Luo</strong>, Liyu Zhang, Hong-Yu Zhou, Yun Chen, Peng Li, Yang Liu, and Guanhua Chen</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.acl-long.486.pdf" target="_blank" rel="noopener noreferrer">InstructDiff: Domain-Adaptive Data Selection via Differential Entropy for Efficient LLM Fine-Tuning</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhiyin Yu, Yuchen Mou, Juncheng Yan, Junyu Luo, Chunchun Chen, Xing Wei, Yunhui Liu, Hongru Sun, Yuxing Zhang, Jun Xu, Yatao Bian, Ming Zhang, Wei Ye, Tieke He, Jie Yang, Guanjie Zheng, Zhonghai Wu, Bo Zhang, Lei Bai, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.acl-long.1045.pdf" target="_blank" rel="noopener noreferrer">A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Hao Wu, Hongru Sun, Wanqing Li, Xinguo Yu, Hao Ming, <strong class="author-self">Xiao Luo</strong>, Wenbin Zhang, Jiahong Zhao, Yi Guo, and Jie Yang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.acl-long.1790.pdf" target="_blank" rel="noopener noreferrer">FLAIR: Steering LLM Mathematical Problem Solving based on A Fuzzy-Logic-AssIsted Reasoner</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Junwei Yang, Junyu Luo, Ye Yuan, Bin Feng, Yingce Xia, Shufang Xie, Kaili Liu, Bohan Wu, Qi Shi, Haoran Li, Beier Xiao, Zhiping Xiao, <strong class="author-self">Xiao Luo</strong>, Weizhi Zhang, Philip S. Yu, Zequn Liu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.acl-long.2117.pdf" target="_blank" rel="noopener noreferrer">SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhongwei Xie, Ruihao Liao, Zimo Wang, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.findings-acl.500.pdf" target="_blank" rel="noopener noreferrer">GALA: Geometric Data Selection with Strategic Prospecting for Large Language Model Self-training</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhiyin Yu, Bo Zhang, Qibin Hou, Zhonghai Wu, <strong class="author-self">Xiao Luo</strong>, and Lei Bai</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.findings-acl.773.pdf" target="_blank" rel="noopener noreferrer">Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yingtao Ren, <strong class="author-self">Xiao Luo</strong>, Yu-Cheng Chang, and Chin-teng Lin</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.findings-acl.856.pdf" target="_blank" rel="noopener noreferrer">Context-attended Adversarial Reinforcement Learning for Robust Multi-step Retrieval Augmented Generation</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Shunge Zou, Changhu Wang, Wei Ju, Ziyue Qiao, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://aclanthology.org/2026.findings-acl.1860.pdf" target="_blank" rel="noopener noreferrer">DANCE: Diversity-attended Dynamic Caching with Asymmetric Quantization for Test-time Adaptation of Vision-language Models</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Bohan Wu, Yifang Qin, Jiaru Tang, Rong-Cheng Tu, Zhiping Xiao, Taian Guo, Junyu Luo, Wei Ju, <strong class="author-self">Xiao Luo</strong>, Dacheng Tao, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/42431" target="_blank" rel="noopener noreferrer">CogniTrust: Cognitive Memory-Driven Verifiable Supervision for Robust Hashing</a>,”
+              <span class="venue">In AAAI Conference on Artificial Intelligence (AAAI), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiwei Fu, Jiaxiao Chen, Haoyu Lin, Zhonghui Gu, Qingqing Long, Hui Wan, <strong class="author-self">Xiao Luo</strong>, and Minghua Deng</span>,
+              “<a class="paper-title" href="https://academic.oup.com/bib/article/27/3/bbag243/8692751" target="_blank" rel="noopener noreferrer">Out-of-distribution Generalization Enhances Protein Function Annotation for Low-Homology Sequences</a>,”
+              <span class="venue">Briefings in Bioinformatics, 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yuhang Pei, Fanchun Meng, Qinghua Ran, Tao Ren, Yifan Wang, Wei Ju, Zimo Wang, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3770854.3780265" target="_blank" rel="noopener noreferrer">Dual Data-centric Separation with Circular Mixup for Noise-resistant Time Series Learning</a>,”
+              <span class="venue">In ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haodong Zhang, Tao Ren, Changhu Wang, Yifan Wang, Wei Ju, Huaizhi Tang, Junyu Luo, Zimo Wang, Ziyue Qiao, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3770854.3780287" target="_blank" rel="noopener noreferrer">DisCo: Diffusion-guided Unbiased Discriminative Learning for Unsupervised Graph Domain Adaptation</a>,”
+              <span class="venue">In ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Qingqing Long, Shuai Liu, Ning Cao, Zhicheng Ren, <strong class="author-self">Xiao Luo</strong>, Wei Ju, Chen Fang, Zhihong Zhu, Yuanchun Zhou, and Hengshu Zhu</span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/journal/bd/5555/01/11415630/2es6J1BHtXG" target="_blank" rel="noopener noreferrer">A Survey of Large Language Models for Traffic Forecasting: Methods and Applications</a>,”
+              <span class="venue">IEEE Transactions on Big Data (TBD), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yuntai Ding, Tao Ren, Yiwei Fu, Yifan Wang, Haodong Zhang, Chong Chen, Wei Ju, <strong class="author-self">Xiao Luo</strong>, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/11506311" target="_blank" rel="noopener noreferrer">HGOOD-D: Hyperbolic Hierarchical Exploration for Graph Out-of-Distribution Detection</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Haoyu Tao, <strong class="author-self">Xiao Luo</strong>, Yusheng Zhao, Zhiping Xiao, Dailan He, Wei Ju, Chong Chen, Xian-Sheng Hua, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/journal/tk/5555/01/11370238/2dOh3bTS19K" target="_blank" rel="noopener noreferrer">Robust Cross Supervision with Target Mining for Source-free Graph Domain Adaptation</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Qianyi Cai, Ziyue Qiao, Rui Cai, Huijie Liu, Junyi Li, <strong class="author-self">Xiao Luo</strong>, and Hui Xiong</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/11495085" target="_blank" rel="noopener noreferrer">Continual Test-time Training on Graphs via Adaptive Prompts Integration</a>,”
+              <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yingtao Ren, Ziyi Zhao, Yiwei Fu, <strong class="author-self">Xiao Luo</strong>, Yu-Cheng Chang, and Chin-teng Lin</span>,
+              “<span class="paper-title">When Context Bites: Detecting RAG Poisoning via Document-Level Attention Collapse</span>,”
+              <span class="venue">In International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Jiayue Fan, Kaili Liu, Bohan Wu, Binqi Chen, Zequn Liu, Zhiping Xiao, Rong-Cheng Tu, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<span class="paper-title">EviRAG: Evidence-Guided Retrieval-Augmented Generation for Medical Vision-Language Models</span>,”
+              <span class="venue">In International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wanjia Zhao, Qinwei Ma, Jingzhe Shi, Shirley Wu, Jiaqi Han, Yijia Xiao, Si-Yuan Chen, <strong class="author-self">Xiao Luo</strong>, Ludwig Schmidt, and James Zou</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=4PZMeopXzP" target="_blank" rel="noopener noreferrer">PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Xiaoda Wang, Kaiqiao Han, Yuhao Xu, <strong class="author-self">Xiao Luo</strong>, Yizhou Sun, Wei Wang, and Carl Yang</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=95ZV35sBDm" target="_blank" rel="noopener noreferrer">SE-Diff: Simulator and Experience Enhanced Diffusion Model for Comprehensive ECG Generation</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jun Chen, Ziyue Qiao, Qin Zhang, Kaize Ding, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=FoTtvLkkfU" target="_blank" rel="noopener noreferrer">G-Merging: Graph Models Merging for Parameter-Efficient Multi-Task Knowledge Consolidation</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yidi Wang, Ziyue Qiao, Jiawei Gu, Xubin Zheng, Pengyang Wang, Xiaobing Pei, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=93Y7jSUSpk" target="_blank" rel="noopener noreferrer">Out-of-Distribution Graph Models Merging</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhiping Xiao, Yusheng Zhao, Qixin Zhang, Jiaye Xie, Wanjia Zhao, Weizhi Zhang, <strong class="author-self">Xiao Luo</strong>, Philip S. Yu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=76OZBE4Rb6" target="_blank" rel="noopener noreferrer">Sample Lottery: Unsupervised Discovery of Critical Instances for LLM Reasoning</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhiping Xiao, Junyu Luo, Hang Zhou, Yusheng Zhao, <strong class="author-self">Xiao Luo</strong>, Pengyun Wang, Wei Ju, Siyu Heng, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=Gq7mjFEoDm" target="_blank" rel="noopener noreferrer">Hierarchical Encoding Tree with Modality Mixup for Cross-modal Hashing</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Jinsheng Huang, Yang Xu, Lutong Zou, <strong class="author-self">Xiao Luo</strong>, Bohan Wu, Yifan Wang, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=fBmRLVAw4T" target="_blank" rel="noopener noreferrer">Conformalized Hierarchical Calibration for Uncertainty-Aware Adaptive Hashing</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Wenrui Wu, Yifang Qin, Taian Guo, Tao Zhe, Jiaru Tang, Zhiping Xiao, Weizhi Zhang, Ziyue Qiao, Wei Ju, Dongjie Wang, <strong class="author-self">Xiao Luo</strong>, Philip S. Yu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=m2MeiYOJED" target="_blank" rel="noopener noreferrer">PRISM: Partial-label Relational Inference with Spatial and Spectral Cues</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jiawei Gu, Ziyue Qiao, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=DACN5xM4h7" target="_blank" rel="noopener noreferrer">Detecting the Semantic Fixed Point: A Geometric Framework for Efficient Inference</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Hourun Li, Yifan Wang, Qinghua Ran, Junyu Luo, Jia Yang, Changling Zhou, Zhiping Xiao, Wei Ju, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=AheW1kJ5E9" target="_blank" rel="noopener noreferrer">CELL: A Causal Perspective for Fairness-aware Graph Adaptation</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao, Jiaye Xie, Qixin Zhang, Weizhi Zhang, <strong class="author-self">Xiao Luo</strong>, Zhiping Xiao, Philip S. Yu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=qnKVxU9EmU" target="_blank" rel="noopener noreferrer">DREAM: Dual-Standard Semantic Homogeneity with Dynamic Optimization for Graph Learning with Label Noise</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jun Chen, Qin Zhang, Weizhi Zhang, <strong class="author-self">Xiao Luo</strong>, Philip S. Yu, and Ziyue Qiao</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=c11G7lmfhm" target="_blank" rel="noopener noreferrer">Learn to Merge: Meta-Learning for Adaptive Multi-Task Model Merging</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jiazhen Huang, Zhiming Liu, Changhu Wang, Wei Ju, Ziyue Qiao, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=YHLkqytT2p" target="_blank" rel="noopener noreferrer">Von Mises-Fisher Mixture Model with Dynamic Shrinkage for Realistic Test-Time Transduction</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yifan Wang, Haodong Zhang, Changhu Wang, Tao Ren, Dongjie Wang, Wei Ju, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=iU0G5m6dhf" target="_blank" rel="noopener noreferrer">CLINIC: Towards High-quality Graph Out-Of-Distribution Detection</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Kaidi Hu, Guancheng Wan, <strong class="author-self">Xiao Luo</strong>, and Ruigang Yang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=ETPsJre8pn" target="_blank" rel="noopener noreferrer">DART: Distribution-Aware Adaptive Relational Transfer for Adversarial Attacks against Closed-Source MLLMs</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yuhang Pei, Fanchun Meng, Wenrui Wu, Tao Ren, Yifan Wang, Wei Ju, Chao Zheng, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=BgCTOYTtqi" target="_blank" rel="noopener noreferrer">CURE: Context-driven Diffusion with Progressive Expansion for Single Domain Generalization in Time Series Classification</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Xiaoda Wang, Ching Chang, Defu Cao, Kaiqiao Han, Fang Sun, Yue Huang, Minxiao Wang, Chang Xu, <strong class="author-self">Xiao Luo</strong>, Runze Yan, Xiangliang Zhang, Xiao Hu, Yan Liu, Yizhou Sun, Wei Wang, and Carl Yang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=cgpU6fhUXx" target="_blank" rel="noopener noreferrer">Position: Beyond Prediction: Toward Verifiable Physiological Waveform Reasoning with Foundation Models and Agentic LLMs</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2026. <a href="https://dl.acm.org/doi/10.1145/3770855.3816466" target="_blank" rel="noopener noreferrer">Lecture-Style Tutorial at ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2026</a></span>
+            </li>
+            <li>
+              <span class="publication-authors">Ji Zhang, <strong class="author-self">Xiao Luo</strong>, and Hang Zhou</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/epdf/10.1145/3805622.3810581" target="_blank" rel="noopener noreferrer">CB-CV: A Cluster-Based Cross-Validation Benchmark for Multimodal Video Out-of-Distribution Detection</a>,”
+              <span class="venue">In International Conference on Multimedia Retrieval (ICMR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tianyu Liu, Yingxin Lin, <strong class="author-self">Xiao Luo</strong>, Yizhou Sun, and Hongyu Zhao</span>,
+              “<a class="paper-title" href="https://www.nature.com/articles/s42003-025-09479-6" target="_blank" rel="noopener noreferrer">VISTA uncovers missing gene expression and spatial-induced information for spatial transcriptomic data analysis</a>,”
+              <span class="venue">npj Communications Biology, 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tianyu Liu, Lijun Wang, Tinglin Huang, <strong class="author-self">Xiao Luo</strong>, Wengong Jin, and Hongyu Zhao</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=LLlOJs4o2N" target="_blank" rel="noopener noreferrer">Unified Sample Difficulty Estimation in Pathology Foundation Models</a>,”
+              <span class="venue">Transactions on Machine Learning Research (TMLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhiming Pan, Junyu Luo, Zhiping Xiao, Kaize Ding, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=ZssIalqqrz" target="_blank" rel="noopener noreferrer">ZipAct: Zipping Interaction History into a Compact State for Efficient LLM Agents</a>,”
+              <span class="venue">Transactions on Machine Learning Research (TMLR), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Zixuan Ouyang, <strong class="author-self">Xiao Luo</strong>, Hourun Li, Zhiping Xiao, Yifan Wang, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3774904.3792714" target="_blank" rel="noopener noreferrer">Space-based Parameter Evolving with Lightweight Optimization for Graph Adaptation to Evolving Shifts</a>,”
+              <span class="venue">In The Web Conference (TheWebConf), 2026.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Qianyi Cai, Ziyue Qiao, Minghao Yang, <strong class="author-self">Xiao Luo</strong>, and Hui Xiong</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3774904.3792384" target="_blank" rel="noopener noreferrer">Graph Cross-Domain Continual Fine-Tuning via Orthogonal LoRA Routing with Contrastive Expert Specialization</a>,”
+              <span class="venue">In The Web Conference (TheWebConf), 2026.</span>
+            </li>
+          </ul>
+        </section>
+        <section id="publications-2025" class="publication-year">
+          <h3>2025</h3>
+          <ul class="publication-list">
+            <li>
+              <span class="publication-authors">Yusheng Zhao, Junyu Luo, <strong class="author-self">Xiao Luo</strong>, Jinsheng Huang, Jingyang Yuan, Zhiping Xiao, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1609/aaai.v39i21.34446" target="_blank" rel="noopener noreferrer">Attention Bootstrapping for Multi-modal Test-time Adaptation</a>,”
+              <span class="venue">In AAAI Conference on Artificial Intelligence (AAAI), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fan Zhang, Changhu Wang, Zebang Cheng, Xiaojiang Peng, Dongjie Wang, Yijia Xiao, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/33441" target="_blank" rel="noopener noreferrer">DREAM: Decoupled Discriminative Learning with Bigraph-aware Alignment for Semi-supervised 2D-3D Cross-modal Retrieval</a>,”
+              <span class="venue">In AAAI Conference on Artificial Intelligence (AAAI), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao, Changhu Wang, <strong class="author-self">Xiao Luo</strong>, Junyu Luo, Wei Ju, Zhiping Xiao, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/33463" target="_blank" rel="noopener noreferrer">TRACI: A Data-centric Approach for Multi-Domain Generalization on Graphs</a>,”
+              <span class="venue">In AAAI Conference on Artificial Intelligence (AAAI), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Taian Guo, Hang Zhou, Zihao Chen, Zhiping Xiao, Yifang Qin, <strong class="author-self">Xiao Luo</strong>, Wei Ju, Yifan Wang, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3746027.3755812" target="_blank" rel="noopener noreferrer">CODE: Towards Partial Label Graph Learning via Coupled Dual Separation</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jiayi Zeng, Tao Ren, Changhu Wang, Yifan Wang, Wei Ju, Zhipeng Sun, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3746027.3755795" target="_blank" rel="noopener noreferrer">DATE: Dual Prompt Learning with Information Bottleneck for Graph Out-of-distribution Generalization</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Junyu Luo, Huiyu Jiang, Hang Zhou, Zhiping Xiao, Wei Ju, Carl Yang, Ming Zhang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3690624.3709340" target="_blank" rel="noopener noreferrer">Future Matters for Present: Towards Effective Physical Simulation over Meshes</a>,”
+              <span class="venue">In ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao, <strong class="author-self">Xiao Luo</strong>, Junyu Luo, Wei Ju, Zhonghui Gu, Zhiping Xiao, Xian-Sheng Hua, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3772720" target="_blank" rel="noopener noreferrer">SPOT: Spectral Optimal Transport for Graph Domain Generalization</a>,”
+              <span class="venue">ACM Transactions on Knowledge Discovery from Data (TKDD), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Binqi Chen, Haixin Wang, Zhiping Xiao, Ming Zhang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-naacl.50.pdf" target="_blank" rel="noopener noreferrer">How Do Large Language Models Perform in Dynamical System Modeling</a>,”
+              <span class="venue">In Annual Conference of the North American Chapter of the Association for Computational Linguistics Findings (NAACL Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Dapeng Jiang, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-naacl.24.pdf" target="_blank" rel="noopener noreferrer">Marrying LLMs with Dynamic Forecasting: A Graph Mixture-of-expert Perspective</a>,”
+              <span class="venue">In Annual Conference of the North American Chapter of the Association for Computational Linguistics Findings (NAACL Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, <strong class="author-self">Xiao Luo</strong>, Xiusi Chen, Zhiping Xiao, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-naacl.151.pdf" target="_blank" rel="noopener noreferrer">Semi-supervised Fine-tuning for Large Language Models</a>,”
+              <span class="venue">In Annual Conference of the North American Chapter of the Association for Computational Linguistics Findings (NAACL Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Bohan Wu, Qinghua Ran, Rong-Cheng Tu, <strong class="author-self">Xiao Luo</strong>, Zhiping Xiao, Wei Ju, Dacheng Tao, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/dba71e2eee70475af688a2dc84e7f4005a621f08.pdf" target="_blank" rel="noopener noreferrer">SEGA: Shaping Semantic Geometry for Robust Hashing under Noisy Supervision</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao, Qixin Zhang, <strong class="author-self">Xiao Luo</strong>, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/d615b950a359ab4cc2684209840bedfc61f6d59e.pdf" target="_blank" rel="noopener noreferrer">Dynamic Text Bundling Supervision for Zero-Shot Inference on Text-Attributed Graphs</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhao Jin, Rong-Cheng Tu, Jingyi Liao, Wenhao Sun, <strong class="author-self">Xiao Luo</strong>, Shunyu Liu, and Dacheng Tao</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/b0522ba8737e40b1714bc1adc199fcfa47a3dd5d.pdf" target="_blank" rel="noopener noreferrer">SPAZER: Spatial-Semantic Progressive Reasoning Agent for Zero-shot 3D Visual Grounding</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jiawei Gu, Yidi Wang, Qingqiang Sun, Xinming Li, <strong class="author-self">Xiao Luo</strong>, and Ziyue Qiao</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=KQTp6ljvlo" target="_blank" rel="noopener noreferrer">Fourier Clouds: Fast Bias Correction for Imbalanced Semi-Supervised Learning</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Ruoyan Li, Guancheng Wan, Zijie Huang, Zixiao Liu, Haixin Wang, <strong class="author-self">Xiao Luo</strong>, Wei Wang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/0e18d3408f6e29d5fa0704146e2fc2c65e05b1c8.pdf" target="_blank" rel="noopener noreferrer">Flow Field Reconstruction with Sensor Placement Policy Learning</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zitong Shi, Guancheng Wan, Haixin Wang, Ruoyan Li, Zijie Huang, Wanjia Zhao, Yijia Xiao, <strong class="author-self">Xiao Luo</strong>, Carl Yang, Yizhou Sun, and Wei Wang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=o2y6BS6mm0" target="_blank" rel="noopener noreferrer">Don’t Forget the Enjoin: FocalLoRA for Instruction Hierarchical Alignment in Large Language Models</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Xin Ma, Yifan Wang, Siyu Yi, Wei Ju, Junyu Luo, Yusheng Zhao, <strong class="author-self">Xiao Luo</strong>, and Jiancheng Lv</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/c2ce0e23e1c3a4a3a8c7857767fc61280dd6d719.pdf" target="_blank" rel="noopener noreferrer">Dual Prototype-Enhanced Contrastive Framework for Class-Imbalanced Graph Domain Adaptation</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Bohan Wu, <strong class="author-self">Xiao Luo</strong>, Zhiping Xiao, Yiqiao Jin, Rong-Cheng Tu, Nan Yin, Yifan Wang, Jingyang Yuan, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.acl-long.1493.pdf" target="_blank" rel="noopener noreferrer">Towards Efficient LLM Post Training: A Data-centric Perspective</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Zhizhuo Kou, Liming Yang, <strong class="author-self">Xiao Luo</strong>, Jinsheng Huang, Zhiping Xiao, Jingshu Peng, Chengzhong Liu, Jiaming Ji, Xuanzhe Liu, Sirui Han, Ming Zhang, and Yike Guo</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.acl-long.1426.pdf" target="_blank" rel="noopener noreferrer">FinMME: A Financial Multi-Modal Evaluation Dataset</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Huanhuan Wei, <strong class="author-self">Xiao Luo</strong>, Hongyi Yu, Jinping Liang, Luning Yang, Lixing Lin, Alexandra Popa, and Xiting Yan</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.acl-long.455.pdf" target="_blank" rel="noopener noreferrer">Identifying Cellular Niches in Spatial Transcriptomics: An Investigation into the Capabilities of Large Language Models</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics (ACL), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao, <strong class="author-self">Xiao Luo</strong>, Haomin Wen, Zhiping Xiao, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-acl.424/" target="_blank" rel="noopener noreferrer">Embracing Large Language Models in Traffic Flow Forecasting</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiwei Fu, Yuxing Zhang, Chunchun Chen, Jianwen Ma, Quan Yuan, Rong-Cheng Tu, Xinli Huang, Wei Ye, <strong class="author-self">Xiao Luo</strong>, and Minghua Deng</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-acl.314/" target="_blank" rel="noopener noreferrer">MARK: Multi-agent Collaboration with Ranking Guidance for Text-attributed Graph Clustering</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhiyin Yu, Chao Zheng, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-acl.53.pdf" target="_blank" rel="noopener noreferrer">scRAG: Hybrid Retrieval-Augmented Generation for LLM-based Cross-Tissue Single-Cell Annotation</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao, <strong class="author-self">Xiao Luo</strong>, Junyu Luo, Weizhi Zhang, Zhiping Xiao, Wei Ju, Philip S. Yu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-emnlp.54.pdf" target="_blank" rel="noopener noreferrer">Multifaceted Evaluation of Audio-Visual Capability for MLLMs: Effectiveness, Efficiency, Generalizability and Robustness</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yuhang Pei, Yifan Wang, Tao Ren, Zhipeng Sun, Wei Ju, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-emnlp.58.pdf" target="_blank" rel="noopener noreferrer">LEAF: Large Language Diffusion Model for Time Series Forecasting</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Ruochang Li, <strong class="author-self">Xiao Luo</strong>, Zhiping Xiao, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-emnlp.360.pdf" target="_blank" rel="noopener noreferrer">HEAL: Hybrid Enhancement with LLM-based Agents for Text-attributed Hypergraph Self-supervised Representation Learning</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Changhu Wang, Yizhou Sun, and Wei Wang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-emnlp.145.pdf" target="_blank" rel="noopener noreferrer">How Do Large Language Models Perform on PDE Discovery: A Coarse-to-fine Perspective</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yangning Li, Weizhi Zhang, Yuyao Yang, Wei-Chieh Huang, Yaozu Wu, Junyu Luo, Yuanchen Bei, Henry Peng Zou, <strong class="author-self">Xiao Luo</strong>, Yusheng Zhao, Chunkit Chan, Yankai Chen, Zhongfen Deng, Yinghui Li, Hai-Tao Zheng, Dongyuan Li, Renhe Jiang, Ming Zhang, Yangqiu Song, and Philip S. Yu</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-emnlp.648.pdf" target="_blank" rel="noopener noreferrer">A Survey of RAG-Reasoning Systems in Large Language Models</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yijia Xiao, Wanjia Zhao, Junkai Zhang, Yiqiao Jin, Han Zhang, Zhicheng Ren, Renliang Sun, Haixin Wang, Guancheng Wan, Pan Lu, <strong class="author-self">Xiao Luo</strong>, Yu Zhang, James Zou, Yizhou Sun, and Wei Wang</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2025.findings-emnlp.1255.pdf" target="_blank" rel="noopener noreferrer">Protein Large Language Models: A Comprehensive Survey</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yanping Wu, Yanyong Huang, Zijun Yao, Yanjie Fu, Kunpeng Liu, <strong class="author-self">Xiao Luo</strong>, and Dongjie Wang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3746252.3761123" target="_blank" rel="noopener noreferrer">Adaptive Context-Infused Performance Evaluator for Iterative Feature Space Optimization</a>,”
+              <span class="venue">In Conference on Information and Knowledge Management (CIKM), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Xiaoda Wang, Yuji Zhao, Kaiqiao Han, <strong class="author-self">Xiao Luo</strong>, Sanne van Rooij, Jennifer Stevens, Lifang He, Liang Zhan, Yizhou Sun, Wei Wang, and Carl Yang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/11356813" target="_blank" rel="noopener noreferrer">Conditional Neural ODE for Longitudinal Parkinson’s Disease Progression Forecasting</a>,”
+              <span class="venue">In IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Huaiyuan Yao, Zhenxiao Cao, Zhongman Wang, Xiewei Ni, Jinyan Dong, Hongyi Cai, Yuqiang Han, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/11391808" target="_blank" rel="noopener noreferrer">How Effective is In-Context Learning with Large Language Models for Rare Cell Identification in Single-Cell Expression Data?</a>,”
+              <span class="venue">In IEEE International Conference on Data Mining (ICDM), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Yusheng Zhao, <strong class="author-self">Xiao Luo</strong>, Zhiping Xiao, Wei Ju, Li Shen, Dacheng Tao, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10919153" target="_blank" rel="noopener noreferrer">Cross-Domain Diffusion with Progressive Alignment for Efficient Adaptive Retrieval</a>,”
+              <span class="venue">IEEE Transactions on Image Processing (TIP), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junwei Yang, Yiyang Gu, Yifang Qin, <strong class="author-self">Xiao Luo</strong>, Zhiping Xiao, Kangjie Zheng, Wei Ju, Xian-Sheng Hua, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/11203274" target="_blank" rel="noopener noreferrer">TowerDNA: Fast and Accurate Graph Retrieval with Dividing, Contrasting and Alignment</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Ziyue Qiao, Xiaomin Yu, Weiyu Guo, <strong class="author-self">Xiao Luo</strong>, Meng Xiao, and Hui Xiong</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10265737" target="_blank" rel="noopener noreferrer">Adapting Graph Models via Target Integrity Assessment and Source Distribution Hypothesis</a>,”
+              <span class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tao Ren, Yifan Wang, Wei Ju, Chengwu Liu, Fanchun Meng, Siyu Yi, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1016/j.ipm.2025.104084" target="_blank" rel="noopener noreferrer">Multi-Scale Hard Sample Mining for Contrastive Deep Graph Clustering</a>,”
+              <span class="venue">Information Processing and Management, 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Qingqing Long, Haixin Wang, Jinan Sun, Wei Xiang, Yijia Xiao, Yusheng Zhao, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10637714" target="_blank" rel="noopener noreferrer">Learning Resistant Binary Descriptors Against Noise for Efficient Image Retrieval</a>,”
+              <span class="venue">In International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Ziyue Qiao, Junren Xiao, Qingqiang Sun, Meng Xiao, <strong class="author-self">Xiao Luo</strong>, and Hui Xiong</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=Pbz4i7B0B4" target="_blank" rel="noopener noreferrer">Towards Continuous Reuse of Graph Models via Holistic Memory Diversification</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Yuhao Tang, Yiwei Fu, <strong class="author-self">Xiao Luo</strong>, Zhizhuo Kou, Zhiping Xiao, Wei Ju, Wentao Zhang, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=Rab1LXJKLp" target="_blank" rel="noopener noreferrer">Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao, Qixin Zhang, <strong class="author-self">Xiao Luo</strong>, Junyu Luo, Wei Ju, Zhiping Xiao, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=lC40m2jjUO" target="_blank" rel="noopener noreferrer">Test-time Adaptation on Graphs via Adaptive Subgraph-based Selection and Regularized Prototypes</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Ziyue Qiao, Qianyi Cai, Hao Dong, Jiawei Gu, Pengyang Wang, Meng Xiao, <strong class="author-self">Xiao Luo</strong>, and Hui Xiong</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/be92a8a665523bbf75bb7414e24c02b9691f8df3.pdf" target="_blank" rel="noopener noreferrer">GCAL: Adapting Graph Models to Evolving Domain Shifts</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yifan Wang, Hourun Li, Ling Yue, Zhiping Xiao, Jia Yang, Changling Zhou, Wei Ju, Ming Zhang, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=SLEeGAg5ee" target="_blank" rel="noopener noreferrer">DANCE: Dual Unbiased Expansion with Group-acquired Alignment for Out-of-distribution Graph Fairness Learning</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Guancheng Wan, Zijie Huang, Wanjia Zhao, <strong class="author-self">Xiao Luo</strong>, Yizhou Sun, and Wei Wang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=nVD7KoU09V" target="_blank" rel="noopener noreferrer">Rethink GraphODE Generalization within Coupled Dynamical System</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jiawei Gu, Ziyue Qiao, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://www.ijcai.org/proceedings/2021/0125.pdf" target="_blank" rel="noopener noreferrer">NeuBM: Mitigating Model Bias in Graph Neural Networks through Neutral Input Calibration</a>,”
+              <span class="venue">In International Joint Conference on Artificial Intelligence (IJCAI), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tianyu Liu, Tinyi Chi, <strong class="author-self">Xiao Luo</strong>, and Hongyu Zhao</span>,
+              “<a class="paper-title" href="https://www.nature.com/articles/s41467-025-59822-y" target="_blank" rel="noopener noreferrer">BAITSAO: Building A Foundation Model for Drug Synergy Analysis Powered by Language Models</a>,”
+              <span class="venue">Nature Communications, 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Yiyang Gu, Zhengyang Mao, Ziyue Qiao, Yifang Qin, <strong class="author-self">Xiao Luo</strong>, Hui Xiong, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://link.springer.com/article/10.1007/s11432-022-3952-3" target="_blank" rel="noopener noreferrer">GPS: Graph Contrastive Learning via Multi-scale Augmented Views from Adversarial Pooling</a>,”
+              <span class="venue">Science China Information Sciences (SCIS), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Pengyun Wang, Yadi Cao, Chris Russell, Yanxin Shen, Junyu Luo, Ming Zhang, Siyu Heng, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=P5y82LKGbY" target="_blank" rel="noopener noreferrer">DELTA: Dual Consistency Delving with Topological Uncertainty for Active Graph Domain Adaptation</a>,”
+              <span class="venue">Transactions on Machine Learning Research (TMLR), 2025.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fang Sun, Zijie Huang, Haixin Wang, Huacong Tang, <strong class="author-self">Xiao Luo</strong>, Wei Wang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=XK7cIdj6Fz" target="_blank" rel="noopener noreferrer">Graph Fourier Neural ODEs: Modeling Spatial-temporal Multi-scales in Molecular Dynamics</a>,”
+              <span class="venue">Transactions on Machine Learning Research (TMLR), 2025.</span>
+            </li>
+          </ul>
+        </section>
+        <section id="publications-2024" class="publication-year">
+          <h3>2024</h3>
+          <ul class="publication-list">
+            <li>
+              <span class="publication-authors">Haixin Wang, Jianlong Chang, Yihang Zhai, <strong class="author-self">Xiao Luo</strong>, Jinan Sun, Zhouchen Lin, and Qi Tian</span>,
+              “<a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/28345" target="_blank" rel="noopener noreferrer">LION: Implicit Vision Prompt Tuning</a>,”
+              <span class="venue">In AAAI Conference on Artificial Intelligence (AAAI), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Hao Wu, Fan Xu, Chong Chen, Xian-Sheng Hua, <strong class="author-self">Xiao Luo</strong>, and Haixin Wang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3664647.3681489" target="_blank" rel="noopener noreferrer">PastNet: Introducing Physical Inductive Biases for Spatio-temporal Video Prediction</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fan Zhang, Xian-Sheng Hua, Chong Chen, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://aclanthology.org/2024.naacl-long.21/" target="_blank" rel="noopener noreferrer">DEMO: A Statistical Perspective for Efficient Image-Text Matching</a>,”
+              <span class="venue">In Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Hao Wu, Changhu Wang, Fan Xu, Jinbao Xue, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/c8b66405bc52ba1031d1591eec96d618612ff575.pdf" target="_blank" rel="noopener noreferrer">PURE: Prompt Evolution with Graph ODE for Out-of-distribution Fluid Dynamics Modeling</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fan Zhang, Tianyu Liu, Zihao Chen, Xiaojiang Peng, Chong Chen, Xian-Sheng Hua, <strong class="author-self">Xiao Luo</strong>, and Hongyu Zhao</span>,
+              “<a class="paper-title" href="https://openreview.net/forum?id=sKEhebkEdz" target="_blank" rel="noopener noreferrer">Semi-supervised Knowledge Transfer Across Multi-omic Single-cell Data</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jingyang Yuan, Gongbo Sun, Zhiping Xiao, Hang Zhou, <strong class="author-self">Xiao Luo</strong>, Junyu Luo, Yusheng Zhao, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=lwg3ohkFRv" target="_blank" rel="noopener noreferrer">EGODE: An Event-attended Graph ODE Framework for Modeling Rigid Dynamics</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zijie Huang, Wanjia Zhao, Jingdong Gao, Ziniu Hu, <strong class="author-self">Xiao Luo</strong>, Yadi Cao, Yuanzhou Chen, Yizhou Sun, and Wei Wang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=pT8DIhsJCw" target="_blank" rel="noopener noreferrer">Physics-Informed Regularization for Domain-Agnostic Dynamical System Modeling</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fred Xu, Song Jiang, Zijie Huang, <strong class="author-self">Xiao Luo</strong>, Shichang Zhang, Yuanzhou Chen, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2024.findings-acl.158/" target="_blank" rel="noopener noreferrer">FUSE: Measure-Theoretic Compact Fuzzy Set Representation for Taxonomy Expansion</a>,”
+              <span class="venue">In The Annual Meeting of the Association for Computational Linguistics Findings (ACL Findings), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Binqi Chen, Zihao Chen, Ziyue Qiao, <strong class="author-self">Xiao Luo</strong>, Junyu Luo, Zhiping Xiao, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0004370225001158" target="_blank" rel="noopener noreferrer">MATE: Masked Optimal Transport with Dynamic Selection for Partial Label Graph Learning</a>,”
+              <span class="venue">Artificial Intelligence (AI), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yijia Xiao, Yiqiao Jin, Yushi Bai, Yue Wu, Xianjun Yang, <strong class="author-self">Xiao Luo</strong>, Wenchao Yu, Xujiang Zhao, Yanchi Liu, Quanquan Gu, Haifeng Chen, Wei Wang, and Wei Cheng</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2024.emnlp-main.785.pdf" target="_blank" rel="noopener noreferrer">Large Language Models Can Be Contextual Privacy Protection Learners</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing (EMNLP), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tianyu Liu, Yijia Xiao, <strong class="author-self">Xiao Luo</strong>, Hua Xu, Wenjin Zheng, and Hongyu Zhao</span>,
+              “<a class="paper-title" href="https://aclanthology.org/2024.findings-emnlp.277.pdf" target="_blank" rel="noopener noreferrer">Geneverse: A Collection of Open-source Multimodal Large Language Models for Genomic and Proteomic Research</a>,”
+              <span class="venue">In The Conference on Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zeyu Dong, Qingqing Long, Yihang Zhou, Zhihong Zhu, Yidong Wang, <strong class="author-self">Xiao Luo</strong>, Pengyang Wang, Pengfei Wang, and Yuanchun Zhou</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3627673.3679747" target="_blank" rel="noopener noreferrer">PIXEL: Prompt-based Zero-shot Hashing via Visual and Textual Semantic Alignment</a>,”
+              <span class="venue">In Conference on Information and Knowledge Management (CIKM), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiwei Fu, Zhonghui Gu, <strong class="author-self">Xiao Luo</strong>, Luhua Lai, Qirui Guo, and Minghua Deng</span>,
+              “<a class="paper-title" href="https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giae093/7916845" target="_blank" rel="noopener noreferrer">Learning A Generalized Graph Transformer for Protein Function Prediction in Dissimilar Sequences</a>,”
+              <span class="venue">GigaScience, 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fan Zhang, Xian-Sheng Hua, Chong Chen, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Fine-grained_Prototypical_Voting_with_Heterogeneous_Mixup_for_Semi-supervised_2D-3D_Cross-modal_CVPR_2024_paper.pdf" target="_blank" rel="noopener noreferrer">Fine-grained Prototypical Voting with Heterogeneous Mixup for Semi-supervised 2D-3D Cross-modal Retrieval</a>,”
+              <span class="venue">In IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yuhao Tang, Junyu Luo, Ling Yang, <strong class="author-self">Xiao Luo</strong>, Wentao Zhang, and Cui Bin</span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/proceedings-article/icde/2024/171500c598/1YOtIfxUvDy" target="_blank" rel="noopener noreferrer">Multi-View Teacher with Curriculum Data Fusion for Robust Unsupervised Domain Adaptation</a>,”
+              <span class="venue">In IEEE International Conference on Data Engineering (ICDE), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fan Zhang, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10547662" target="_blank" rel="noopener noreferrer">FATE: Learning Effective Binary Descriptors with Group Fairness</a>,”
+              <span class="venue">IEEE Transactions on Image Processing (TIP), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Xinlong Yang, Haixin Wang, Jinan Sun, Yijia Xiao, Wei Xiang, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10637714" target="_blank" rel="noopener noreferrer">ROSE: Relational and Prototypical Structure Learning for Universal Domain Adaptive Hashing</a>,”
+              <span class="venue">IEEE Transactions on Information Forensics and Security (TIFS), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haixin Wang, Xinlong Yang, Jinan Sun, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/journal/tk/5555/01/10591352/1YratJBpxhS" target="_blank" rel="noopener noreferrer">Look into Gradients: Learning Compact Hash Codes for Out-of-distribution Retrieval</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zeyu Ma, Yuqi Li, Yizhi Luo, <strong class="author-self">Xiao Luo</strong>, Jinxing Li, Chong Chen, Xian-Sheng Hua, and Guangming Lu</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/10478505" target="_blank" rel="noopener noreferrer">Discrepancy and Structure-based Contrast for Test-time Adaptive Retrieval</a>,”
+              <span class="venue">IEEE Transactions on Multimedia (TMM), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yiyang Gu, Zihao Chen, Yifang Qin, Zhengyang Mao, Zhiping Xiao, Wei Ju, Chong Chen, Xian-Sheng Hua, Yifan Wang, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/10543125" target="_blank" rel="noopener noreferrer">DEER: Distribution Divergence-based Graph Contrast for Partial Label Learning on Graphs</a>,”
+              <span class="venue">IEEE Transactions on Multimedia (TMM), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yifan Wang, <strong class="author-self">Xiao Luo</strong>, Chong Chen, Xian-Sheng Hua, Ming Zhang, and Wei Ju</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/10636807" target="_blank" rel="noopener noreferrer">DisenSemi: Semi-supervised Graph Classification via Disentangled Representation Learning</a>,”
+              <span class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Fan Zhang, Hang Zhou, Xian-Sheng Hua, Chong Chen, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/journal/tp/5555/01/10553262/1XH2IDQDO0g" target="_blank" rel="noopener noreferrer">HOPE: A Hierarchical Perspective for Semi-supervised 2D-3D Cross-Modal Retrieval</a>,”
+              <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Yiyang Gu, <strong class="author-self">Xiao Luo</strong>, Wei Ju, Zhiping Xiao, Yusheng Zhao, Jingyang Yuan, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10561561" target="_blank" rel="noopener noreferrer">GALA: Graph Diffusion-based Alignment with Jigsaw for Source-free Domain Adaptation</a>,”
+              <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Nan Yin, Mengzhu Wang, Zhenghan Chen, Li Shen, Huan Xiong, Bin Gu, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=4olqbTBt1Y" target="_blank" rel="noopener noreferrer">DREAM: Dual Structured Exploration with Mixup for Open-set Graph Domain Adaption</a>,”
+              <span class="venue">In International Conference on Learning Representations (ICLR), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Yiyang Gu, Huiyu Jiang, Hang Zhou, Jinsheng Huang, Wei Ju, Zhiping Xiao, Ming Zhang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=jrE7geZekq" target="_blank" rel="noopener noreferrer">PGODE: Towards High-quality System Dynamics Modeling</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Hao Wu, Huiyuan Wang, Kun Wang, Weiyan Wang, Changan Ye, Yangyu Tao, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf/ca360685f04485b4a53acc83be7697199b25188b.pdf" target="_blank" rel="noopener noreferrer">Prometheus: Out-of-distribution Fluid Dynamics Modeling with Disentangled Graph ODE</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Zhengyang Mao, Siyu Yi, Yifang Qin, Yiyang Gu, Zhiping Xiao, Yifan Wang, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=M5ne8enLcr" target="_blank" rel="noopener noreferrer">Hypergraph-enhanced Dual Semi-supervised Graph Classification</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Junyu Luo, Zhiping Xiao, Yifan Wang, <strong class="author-self">Xiao Luo</strong>, Jingyang Yuan, Wei Ju, Langechuan Liu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.ijcai.org/proceedings/2024/0520.pdf" target="_blank" rel="noopener noreferrer">Rank and Align: Towards effective Source-free Graph Domain Adaptation</a>,”
+              <span class="venue">In International Joint Conference on Artificial Intelligence (IJCAI), 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Zheng Fang, Yiyang Gu, Zequn Liu, Qingqing Long, Ziyue Qiao, Yifang Qin, Jianhao Shen, Fang Sun, Zhiping Xiao, Junwei Yang, Jingyang Yuan, Yusheng Zhao, Yifan Wang, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.sciencedirect.com/science/article/abs/pii/S089360802400131X" target="_blank" rel="noopener noreferrer">A Comprehensive Survey on Deep Graph Representation Learning</a>,”
+              <span class="venue">Neural Networks, 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Ziyue Qiao, Meng Xiao, Weiyu Guo, <strong class="author-self">Xiao Luo</strong>, and Hui Xiong</span>,
+              “<a class="paper-title" href="https://doi.org/10.1016/j.patcog.2024.110498" target="_blank" rel="noopener noreferrer">Information Filtering and Interpolating for Semi-supervised Graph Domain Adaptation</a>,”
+              <span class="venue">Pattern Recognition, 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Zhengyuang Mao, Ziyue Qiao, Yifang Qin, Siyu Yi, Zhiping Xiao, <strong class="author-self">Xiao Luo</strong>, Yanjie Fu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://doi.org/10.1016/j.patcog.2024.110498" target="_blank" rel="noopener noreferrer">Focus on Informative Graphs! Semi-supervised Active Learning for Graph-level Classification</a>,”
+              <span class="venue">Pattern Recognition, 2024.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Weikai Li, Zhiping Xiao, <strong class="author-self">Xiao Luo</strong>, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3589334.3645389" target="_blank" rel="noopener noreferrer">Evaluating Task-Specific Node Influence via Node-Removal-Based Fast Graph Neural Network Inference</a>,”
+              <span class="venue">In The Web Conference (TheWebConf), 2024.</span>
+            </li>
+          </ul>
+        </section>
+        <section id="publications-2023" class="publication-year">
+          <h3>2023</h3>
+          <ul class="publication-list">
+            <li>
+              <span class="publication-authors">Wei Ju, Yiyang Gu, Binqi Chen, Gongbo Sun, Yifang Qin, Xingyuming Liu, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ojs.aaai.org/index.php/AAAI/article/view/25559" target="_blank" rel="noopener noreferrer">GLCC: A General Framework for Graph-level Clustering</a>,”
+              <span class="venue">In AAAI Conference on Artificial Intelligence (AAAI), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhengyang Mao, Wei Ju, Yifang Qin, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3581783.3612360" target="_blank" rel="noopener noreferrer">RAHNet: Retrieval Augmented Hybrid Network for Long-tailed Graph Classification</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Jingyang Yuan, <strong class="author-self">Xiao Luo</strong>, Yifang Qin, Zhengyang Mao, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3581783.3612026" target="_blank" rel="noopener noreferrer">ALEX: Towards Effective Graph Transfer Learning with Noisy Labels</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Song Jiang, Zijie Huang, <strong class="author-self">Xiao Luo</strong>, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3580305.3599272" target="_blank" rel="noopener noreferrer">CF-GODE: Continuous-Time Causal Inference for Multi-Agent Dynamical Systems</a>,”
+              <span class="venue">In ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yifang Qin, Hongjun Wu, Wei Ju, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/abs/10.1145/3624475" target="_blank" rel="noopener noreferrer">A Diffusion model for POI recommendation</a>,”
+              <span class="venue">ACM Transactions on Information Systems (TOIS), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Nan Yin, Li Shen, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/10.1145/3687468" target="_blank" rel="noopener noreferrer">SPORT: A Subgraph Perspective on Graph Classification with Label Noise</a>,”
+              <span class="venue">ACM Transactions on Knowledge Discovery from Data (TKDD), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Haixin Wang, Daqing Wu, Chong Chen, Minghua Deng, Jianqiang Huang, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3532624" target="_blank" rel="noopener noreferrer">A Survey on Deep Hashing Methods</a>,”
+              <span class="venue">ACM Transactions on Knowledge Discovery from Data (TKDD), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Daqing Wu<sup class="equal-contrib" aria-label="co-first author">*</sup>, Yiyang Gu<sup class="equal-contrib" aria-label="co-first author">*</sup>, Chong Chen, Luchen Liu, Jinwen Ma, Ming Zhang, Minghua Deng, Jianqiang Huang, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3611310" target="_blank" rel="noopener noreferrer">Criterion-based Heterogeneous Collaborative Filtering for Multi-behavior Implicit Recommendation</a>,”
+              <span class="venue">ACM Transactions on Knowledge Discovery from Data (TKDD), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Wei Ju<sup class="equal-contrib" aria-label="co-first author">*</sup>, Yiyang Gu, Zhengyang Mao, Luchen Liu, Yuhui Yuan, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3624018" target="_blank" rel="noopener noreferrer">Self-supervised Graph-level Representation Learning with Adversarial Contrastive Learning</a>,”
+              <span class="venue">ACM Transactions on Knowledge Discovery from Data (TKDD), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zeyu Ma, Siwei Wang, <strong class="author-self">Xiao Luo</strong>, Jinxing Li, Chong Chen, Xian-Sheng Hua, and Guangming Lu</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3627162" target="_blank" rel="noopener noreferrer">HARR: Learning Discriminative and High-quality Hash Codes for Image Retrieval</a>,”
+              <span class="venue">ACM Transactions on Multimedia Computing Communications and Applications (TOMM), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Wei Ju, Yiyang Gu, Yifang Qin, Daqing Wu, Si-Yu Yi, Luchen Liu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3626528" target="_blank" rel="noopener noreferrer">Toward Effective Semi-supervised Node Classification with Hybrid Curriculum Pseudo-labeling</a>,”
+              <span class="venue">ACM Transactions on Multimedia Computing Communications and Applications (TOMM), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haixin Wang, Hao Wu, Jinan Sun, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=77i6itptQW" target="_blank" rel="noopener noreferrer">IDEA: An Invariant Perspective for Efficient Domain Adaptive Image Retrieval</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haixin Wang, Xinlong Yang, Jianlong Chang, Dian Jin, Jinan Sun, Shikun Zhang, <strong class="author-self">Xiao Luo</strong>, and Qi Tian</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=pT8DIhsJCw" target="_blank" rel="noopener noreferrer">Parameter-efficient Tuning of Large-scale Multimodal Foundation Model</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Haixin Wang, Zijie Huang, Huiyu Jiang, Abhijeet Sadashiv Gangan, Song Jiang, Yizhou Sun</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=lwg3ohkFRv" target="_blank" rel="noopener noreferrer">CARE: Modeling Interacting Dynamics Under Temporal Environmental Variation</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zhonghui Gu<sup class="equal-contrib" aria-label="co-first author">*</sup>, <strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Jiaxiao Chen, Minghua Deng, and Luhua Lai</span>,
+              “<a class="paper-title" href="https://academic.oup.com/bioinformatics/article/39/7/btad410/7208864" target="_blank" rel="noopener noreferrer">Hierarchical Graph Transformer with Contrastive Learning for Protein Function Prediction</a>,”
+              <span class="venue">Bioinformatics, 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yusheng Zhao<sup class="equal-contrib" aria-label="co-first author">*</sup>, <strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Wei Ju, Chong Chen, Xian-Sheng Hua, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10184800" target="_blank" rel="noopener noreferrer">Dynamic Hypergraph Structure Learning for Traffic Flow Forecasting</a>,”
+              <span class="venue">In IEEE International Conference on Data Engineering (ICDE), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Si-Yu Yi, Zhengyang Mao, Wei Ju, Yong-Dao Zhou, Luchen Liu, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/journal/bd/5555/01/10243111/1QfhR3oB1pS" target="_blank" rel="noopener noreferrer">Towards Long-Tailed Recognition for Graph Classification via Collaborative Experts</a>,”
+              <span class="venue">IEEE Transactions on Big Data (TBD), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haixin Wang, Jinan Sun, <strong class="author-self">Xiao Luo</strong>, Shikun Zhang, Wei Xiang, Chong Chen, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/10042247" target="_blank" rel="noopener noreferrer">Toward Effective Domain Adaptive Retrieval</a>,”
+              <span class="venue">IEEE Transactions on Image Processing (TIP), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Nan Yin, Shen Li, Mengzhu Wang, <strong class="author-self">Xiao Luo</strong>, Zhigang Luo, and Dacheng Tao</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/10113198" target="_blank" rel="noopener noreferrer">OMG: Towards Effective Graph Classification Against Label Noise</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haixin Wang, Huiyu Jiang, Jinan Sun, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/10239525" target="_blank" rel="noopener noreferrer">DIOR: Learning to Hash with Label Noise via Dual Partition and Contrastive Learning</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yifang Qin, Wei Ju, Hongjun Wu, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/journal/tk/2024/07/10379836/1TpynRWCME0" target="_blank" rel="noopener noreferrer">Learning Graph ODE for Continuous-Time Sequential Recommendation</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Yusheng Zhao<sup class="equal-contrib" aria-label="co-first author">*</sup>, Yifang Qin<sup class="equal-contrib" aria-label="co-first author">*</sup>, Wei Ju, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/10138449" target="_blank" rel="noopener noreferrer">Towards Semi-supervised Universal Graph Classification</a>,”
+              <span class="venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Si-Yu Yi, Wei Ju, Yifang Qin, Luchen Liu, <strong class="author-self">Xiao Luo</strong>, Yong-Dao Zhou, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/10265737" target="_blank" rel="noopener noreferrer">Redundancy-Free Self-Supervised Relational Learning for Graph Clustering</a>,”
+              <span class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Nan Yin, Li Shen, Huan Xiong, Bin Gu, Chong Chen, Xian-Sheng Hua, Siwei Liu, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/journal/tp/5555/01/10314020/1RVVeQHAfny" target="_blank" rel="noopener noreferrer">Messages Are Never Propagated Alone: Collaborative Hypergraph Neural Network for Time-series Forecasting</a>,”
+              <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Yusheng Zhao, Yifang Qin, Siyu Yi, Jingyang Yuan, Zhiping Xiao, <strong class="author-self">Xiao Luo</strong>, Xiting Yan, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.sciencedirect.com/science/article/abs/pii/S1566253524001192" target="_blank" rel="noopener noreferrer">COOL: A Conjoint Perspective on Spatio-Temporal Graph Neural Network for Traffic Forecasting</a>,”
+              <span class="venue">Information Fusion, 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Xinlong Yang, Haixin Wang, Jinan Sun, Shikun Zhang, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_Prototypical_Mixing_and_Retrieval-Based_Refinement_for_Label_Noise-Resistant_Image_Retrieval_ICCV_2023_paper.pdf" target="_blank" rel="noopener noreferrer">Prototypical Mixup and Retrieval-based Refinement for Label Noise-resistant Image Retrieval</a>,”
+              <span class="venue">In International Conference on Computer Vision (ICCV), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Nan Yin, Li Shen, Mengzhu Wang, Long Lan, Zeyu Ma, Chong Chen, Xian-Sheng Hua, and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://proceedings.mlr.press/v202/yin23a/yin23a.pdf" target="_blank" rel="noopener noreferrer">CoCo: A Coupled Contrastive Framework for Unsupervised Domain Adaptive Graph Classification</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Jingyang Yuan, Zijie Huang, Huiyu Jiang, Yifang Qin, Wei Ju, Ming Zhang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://proceedings.mlr.press/v202/luo23f/luo23f.pdf" target="_blank" rel="noopener noreferrer">HOPE: High-order Graph ODE For Modeling Interacting Dynamics</a>,”
+              <span class="venue">In International Conference on Machine Learning (ICML), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Yiyang Gu, <strong class="author-self">Xiao Luo</strong>, Yifan Wang, Haochen Yuan, Huasong Zhong, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0893608022004609" target="_blank" rel="noopener noreferrer">Unsupervised Graph-level Representation Learning with Hierarchical Contrasts</a>,”
+              <span class="venue">Neural Networks, 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Zequn Liu, Yifang Qin, Bin Feng, Chen Wang, Zhihui Guo, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0893608023001685" target="_blank" rel="noopener noreferrer">Few-shot Molecular Property Prediction via Hierarchically Structured Learning on Relation Graphs</a>,”
+              <span class="venue">Neural Networks, 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Yifang Qin, Siyu Yi, Zhengyang Mao, Kangjie Zheng, Luchen Liu, <strong class="author-self">Xiao Luo</strong>, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=8wGXnjRLSy" target="_blank" rel="noopener noreferrer">Zero-shot Node Classification with Graph Contrastive Embedding Network</a>,”
+              <span class="venue">Transactions on Machine Learning Research (TMLR), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Yusheng Zhao, Zhengyang Mao, Yifang Qin, Wei Ju, Ming Zhang, and Yizhou Sun</span>,
+              “<a class="paper-title" href="https://openreview.net/pdf?id=qcCE4mC2jI" target="_blank" rel="noopener noreferrer">RIGNN: A Rationale Perspective for Semi-supervised Open-world Graph Classification</a>,”
+              <span class="venue">Transactions on Machine Learning Research (TMLR), 2023.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Haixin Wang, Jinan Sun, Wei Xiang, Shikun Zhang, Chong Chen, Xian-Sheng Hua and <strong class="author-self">Xiao Luo</strong></span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3543507.3583445" target="_blank" rel="noopener noreferrer">DANCE: Learning A Domain Adaptive Framework for Deep Hashing</a>,”
+              <span class="venue">In The Web Conference, 2023.</span>
+            </li>
+          </ul>
+        </section>
+        <section id="publications-2022" class="publication-year">
+          <h3>2022</h3>
+          <ul class="publication-list">
+            <li>
+              <span class="publication-authors">Jinan Sun, Haixin Wang, <strong class="author-self">Xiao Luo</strong>, Shikun Zhang, Wei Xiang, Chong Chen, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/abs/10.1145/3503161.3548127" target="_blank" rel="noopener noreferrer">HEART: Towards Effective Hash Codes Against Label Noise</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zeyu Ma, Wei Ju, <strong class="author-self">Xiao Luo</strong>, Chong Chen, Xian-Sheng Hua, and Guangming Lu</span>,
+              “<a class="paper-title" href="https://juweipku.github.io/files/MM_PURPLE.pdf" target="_blank" rel="noopener noreferrer">Improved Deep Unsupervised Hashing via Prototypical Learning</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yingjie Chen, Chong Chen, <strong class="author-self">Xiao Luo</strong>, Jianqiang Huang, Xian-Sheng Hua, Tao Wang, and Yun Liang</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/abs/10.1145/3503161.3548116" target="_blank" rel="noopener noreferrer">Pursuing Knowledge Consistency: Supervised Hierarchical Contrastive Learning for Facial Action Unit Recognition</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Nan Yin, Li Shen, Baopu Li, Mengzhu Wang, <strong class="author-self">Xiao Luo</strong>, Chong Chen, Zhigang Luo, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://dl.acm.org/doi/pdf/10.1145/3503161.3548012" target="_blank" rel="noopener noreferrer">DEAL: An Unsupervised Domain Adaptive Framework for Graph-level Classification</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Weicong Liang, Yuhui Yuan, Weihong Lin, <strong class="author-self">Xiao Luo</strong>, Henghui Ding, Ding Jia, Zheng Zhang, Chao Zhang, and Han Hu</span>,
+              “<a class="paper-title" href="https://proceedings.neurips.cc/paper_files/paper/2022/file/e6c2e85db1f1039177c4495ccd399ac4-Paper-Conference.pdf" target="_blank" rel="noopener noreferrer">Expediting Vision Transformer for Dense Prediction without Fine-tuning</a>,”
+              <span class="venue">In Annual Conference on Neural Information Processing Systems (NeurIPS), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zeyu Ma, Yuhang Guo, <strong class="author-self">Xiao Luo</strong>, Chong Chen, Minghua Deng, Wei Cheng, and Guangming Lu</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/9746026" target="_blank" rel="noopener noreferrer">DHWP: Learning High-quality Short Hash Codes via Weight Pruning</a>,”
+              <span class="venue">In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Wei Ju<sup class="equal-contrib" aria-label="co-first author">*</sup>, Meng Qu, Chong Chen, Minghua Deng, Xian-Sheng Hua, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://juweipku.github.io/files/ICDE_DualGraph.pdf" target="_blank" rel="noopener noreferrer">DualGraph: Improving Semi-supervised Graph Classification via Dual Contrastive Learning</a>,”
+              <span class="venue">In IEEE International Conference on Data Engineering (ICDE), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Nan Yin, Fuli Feng, Zhigang Luo, Xiang Zhang, Wenjie Wang, <strong class="author-self">Xiao Luo</strong>, Chong Chen, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/abstract/document/9835240" target="_blank" rel="noopener noreferrer">Dynamic Hypergraph Convolutional Network</a>,”
+              <span class="venue">In IEEE International Conference on Data Engineering (ICDE), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju, Yifang Qin, Ziyue Qiao, <strong class="author-self">Xiao Luo</strong>, Yifan Wang, Yanjie Fu, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.computer.org/csdl/proceedings-article/icdm/2022/509900a221/1KpCLHt848g" target="_blank" rel="noopener noreferrer">Kernel-based Substructure Exploration for Next POI Recommendation</a>,”
+              <span class="venue">In IEEE International Conference on Data Mining (ICDM), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Wei Ju<sup class="equal-contrib" aria-label="co-first author">*</sup>, Meng Qu, Yiyang Gu, Chong Chen, Minghua Deng, Xian-Sheng Hua, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://juweipku.github.io/files/TNNLS_CLEAR.pdf" target="_blank" rel="noopener noreferrer">CLEAR: Cluster-enhanced Contrast for Self-supervised Graph Representation Learning</a>,”
+              <span class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Zeyu Ma, <strong class="author-self">Xiao Luo</strong>, Yingjie Chen, Mimiao Luo, Jinxing Li, Minghua Deng, and Guangming Lu</span>,
+              “<a class="paper-title" href="https://www.ijcai.org/proceedings/2022/0175.pdf" target="_blank" rel="noopener noreferrer">Improved Deep Unsupervised Hashing with Fine-grained Semantic Similarity Mining for Multi-Label Image Retrieval</a>,”
+              <span class="venue">In International Joint Conference on Artificial Intelligence (IJCAI), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Wei Ju<sup class="equal-contrib" aria-label="co-first author">*</sup>, <strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Meng Qu, Yifan Wang, Chong Chen, Minghua Deng, Xian-Sheng Hua, and Ming Zhang</span>,
+              “<a class="paper-title" href="https://www.ijcai.org/proceedings/2022/0295.pdf" target="_blank" rel="noopener noreferrer">TGNN: A Joint Semi-supervised Framework for Graph-level Classification</a>,”
+              <span class="venue">In International Joint Conference on Artificial Intelligence (IJCAI), 2022.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Daqing Wu, Xiangyang Guo, <strong class="author-self">Xiao Luo</strong>, Ziyue Qiao, and Jinwen Ma</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/9892820" target="_blank" rel="noopener noreferrer">Adaptive Harmony Learning and Optimization for Attributed Graph Clustering</a>,”
+              <span class="venue">In International Joint Conference on Neural Networks (IJCNN), 2022.</span>
+            </li>
+          </ul>
+        </section>
+        <section id="publications-before-2022" class="publication-year">
+
+          <h3>Before 2022</h3>
+
+          <ul class="publication-list">
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong>, Daqing Wu, Chong Chen, Minghua Deng, Jianqiang Huang, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://drive.google.com/file/d/1WqGdMRnwZzs28K8DKUaH2Um3wBHi_3Ck/view" target="_blank" rel="noopener noreferrer">A Statistical Approach to Mining Semantic Similarity for Deep Unsupervised Hashing</a>,”
+              <span class="venue">In ACM International Conference on Multimedia (MM), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Daqing Wu<sup class="equal-contrib" aria-label="co-first author">*</sup>, <strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Zeyu Ma, Chong Chen, Pengfei Wang, Minghua Deng, and Jinwen Ma</span>,
+              “<a class="paper-title" href="https://www.researchgate.net/profile/Jinwen-Ma-3/publication/358094181_Composition-Enhanced_Graph_Collaborative_Filtering_for_Multi-behavior_Recommendation/links/62b1dcb56ec05339cc977961/Composition-Enhanced-Graph-Collaborative-Filtering-for-Multi-behavior-Recommendation.pdf" target="_blank" rel="noopener noreferrer">Composition-Enhanced Graph Collaborative Filtering for Multi-behavior Recommendation</a>,”
+              <span class="venue">In IEEE International Conference on Data Mining (ICDM), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Weinan Wang, Yuhang Guo, Wei Ju, <strong class="author-self">Xiao Luo</strong>, and Minghua Deng</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/9643409" target="_blank" rel="noopener noreferrer">An Interpretation of Convolutional Neural Networks for Motif Finding from the View of Probability</a>,”
+              <span class="venue">In IEEE International Conference on Tools with Artificial Intelligence (ICTAI), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Yuhang Guo<sup class="equal-contrib" aria-label="co-first author">*</sup>, <strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Liang Chen and Minghua Deng</span>,
+              “<a class="paper-title" href="https://link.springer.com/chapter/10.1007/978-3-030-84532-2_41" target="_blank" rel="noopener noreferrer">DNA-GCN: Graph Convolutional Networks for Predicting DNA-protein Binding</a>,”
+              <span class="venue">In International Conference on Intelligent Computing (ICIC), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Daqing Wu, <strong class="author-self">Xiao Luo</strong>, Xiangyang Guo, Chong Chen, Minghua Deng, and Jinwen Ma</span>,
+              “<a class="paper-title" href="https://link.springer.com/chapter/10.1007/978-3-030-92185-9_48" target="_blank" rel="noopener noreferrer">Concordant Contrastive Learning for Semi-supervised Node Classification on Graph</a>,”
+              <span class="venue">In International Conference on Neural Information Processing (ICONIP), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Tao Li, <strong class="author-self">Xiao Luo</strong>, and Jinwen Ma</span>,
+              “<a class="paper-title" href="https://link.springer.com/chapter/10.1007/978-3-030-92307-5_64" target="_blank" rel="noopener noreferrer">Average Mean Functions Based EM Algorithm for Mixtures of Gaussian Processes</a>,”
+              <span class="venue">In International Conference on Neural Information Processing (ICONIP), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Daqing Wu<sup class="equal-contrib" aria-label="co-first author">*</sup>, Zeyu Ma, Chong Chen, Minghua Deng, Jinwen Ma, Zhongming Jin, Jianqiang Huang, and Xian-Sheng Hua</span>,
+              “<a class="paper-title" href="https://www.ijcai.org/proceedings/2021/0125.pdf" target="_blank" rel="noopener noreferrer">CIMON: Towards High-quality Hash Codes</a>,”
+              <span class="venue">In International Joint Conference on Artificial Intelligence (IJCAI), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors">Daqing Wu<sup class="equal-contrib" aria-label="co-first author">*</sup>, <strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Zeyu Ma<sup class="equal-contrib" aria-label="co-first author">*</sup>, Chong Chen, Minghua Deng, and Jinwen Ma</span>,
+              “<a class="paper-title" href="https://ieeexplore.ieee.org/document/9533645" target="_blank" rel="noopener noreferrer">ARGO: Modeling Heterogeneity in E-commerce Recommendation</a>,”
+              <span class="venue">In International Joint Conference on Neural Networks (IJCNN), 2021.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Xinming Tu<sup class="equal-contrib" aria-label="co-first author">*</sup>, Yang Ding, Ge Gao, and Minghua Deng</span>,
+              “<a class="paper-title" href="https://academic.oup.com/bioinformatics/article/36/5/1405/5584233" target="_blank" rel="noopener noreferrer">Expectation Pooling: An Effective and Interpretable Pooling Method for Predicting DNA-protein Binding</a>,”
+              <span class="venue">Bioinformatics, Volume 36, Issue 5, March 2020, Pages 1405–1412.</span>
+            </li>
+            <li>
+              <span class="publication-authors"><strong class="author-self">Xiao Luo</strong><sup class="equal-contrib" aria-label="co-first author">*</sup>, Weilai Chi<sup class="equal-contrib" aria-label="co-first author">*</sup>, and Minghua Deng</span>,
+              “<a class="paper-title" href="https://www.frontiersin.org/articles/10.3389/fgene.2019.01145/full" target="_blank" rel="noopener noreferrer">Deepprune: Learning Efficient and Interpretable Convolutional Networks Through Weight Pruning for Predicting DNA-Protein Binding</a>,”
+              <span class="venue">Frontiers in Genetics, Nov 2019.</span>
+            </li>
+          </ul>
+
+        </section>
+      </section>
+
+      <section id="teaching" class="content-section">
+        <div class="section-heading-row">
+          <h2 class="section-heading">Teaching</h2>
+        </div>
+        <div class="plain-section-body">
+          <ul class="simple-list">
+            <li><strong>Fall 2026, STAT 451:</strong> Introduction to Machine Learning and Statistical Pattern Classification</li>
+            <li><strong>Spring 2026, STAT 601:</strong> Statistical Methods I</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section id="awards" class="content-section">
+        <div class="section-heading-row">
+          <h2 class="section-heading">Selected Awards and Honors</h2>
+        </div>
+        <div class="plain-section-body">
+          <ul class="simple-list">
+            <li>Chancellor's Award for Postdoctoral Research, UCLA</li>
+            <li>NeurIPS 2023 Workshop DLDE Best Paper Award</li>
+            <li>Institute for Digital Research and Education Postdoctoral Fellowship, UCLA</li>
+            <li>CIKM 2025 Best Paper Candidate</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="service" class="content-section">
+        <div class="section-heading-row">
+          <h2 class="section-heading">Selected Academic Services</h2>
+        </div>
+        <div class="plain-section-body">
+          <p>
+            <strong class="service-label">Associate Editor / Editorial Board Member:</strong>
+            BMC Bioinformatics (2023-), Pattern Recognition (2025-), IEEE Journal of Biomedical and Health Informatics (2025-),
+            Transactions on Machine Learning Research (2025-), IEEE Transactions on Emerging Topics in Computational Intelligence (2025-),
+            and IEEE Transactions on Circuits and Systems for Video Technology (2025-).
+          </p>
+          <p>
+            <strong class="service-label">Area Chair:</strong>
+            ACM MM 2024, ICML 2025, ACL ARR, ACM MM 2025, ECML-PKDD 2025, NeurIPS 2025, ICLR 2026,
+            CVPR 2026, ICML 2026, ECML-PKDD 2026, KDD 2026, and KDD 2026 AI4Science Track.
+          </p>
+          <p>
+            <strong class="service-label">Senior Program Committee:</strong>
+            IJCAI 2025, CIKM 2025, AAAI 2026, and IJCAI 2026.
+          </p>
+          <p>
+            <strong class="service-label">Recognition:</strong>
+            Distinguished Area Chair Certificate, ECML-PKDD 2025.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">© <span id="copyright-year">2026</span> Xiao Luo</footer>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.getElementById("site-navigation");
+      const navLinks = Array.from(nav.querySelectorAll('a[href^="#"]'));
+
+      toggle.addEventListener("click", function () {
+        const isOpen = body.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          body.classList.remove("nav-open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const sections = navLinks
+        .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+        .filter(Boolean);
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          function (entries) {
+            const visible = entries
+              .filter(function (entry) { return entry.isIntersecting; })
+              .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; })[0];
+
+            if (!visible) return;
+
+            navLinks.forEach(function (link) {
+              const active = link.getAttribute("href") === "#" + visible.target.id;
+              link.classList.toggle("active", active);
+              if (active) {
+                link.setAttribute("aria-current", "location");
+              } else {
+                link.removeAttribute("aria-current");
+              }
+            });
+          },
+          { rootMargin: "-18% 0px -68% 0px", threshold: [0, 0.1, 0.35] }
+        );
+
+        sections.forEach(function (section) { observer.observe(section); });
+      }
+
+
+      document.getElementById("copyright-year").textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  
+
+
+</body></html>
